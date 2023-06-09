@@ -5,92 +5,92 @@
   <title>Spese domestiche Simone Razzauti</title>
   <style>
     body {
-  font-family: Arial, sans-serif;
-}
+      font-family: Arial, sans-serif;
+    }
 
-.container {
-  display: flex;
-}
+    .container {
+      display: flex;
+    }
 
-.blue-section,
-.pink-section {
-  flex: 1;
-  padding: 20px;
-  margin: 00px;
-  box-sizing: border-box;
-}
+    .blue-section,
+    .pink-section {
+      flex: 1;
+      padding: 20px;
+      margin: 00px;
+      box-sizing: border-box;
+    }
 
-.blue-section {
-  background-color: #cce5ff;
-}
+    .blue-section {
+      background-color: #cce5ff;
+    }
 
-.pink-section {
-  background-color: #f8d7da;
-}
+    .pink-section {
+      background-color: #f8d7da;
+    }
 
-.yellow-section {
-  padding: 20px;
-  margin: 0px;
-  background-color: #fff3cd;
-}
+    .yellow-section {
+      padding: 20px;
+      margin: 0px;
+      background-color: #fff3cd;
+    }
 
-#form input, #form select {
-  display: block;
-  margin-bottom: 10px;
-}
+    #form input, #form select {
+      display: block;
+      margin-bottom: 10px;
+    }
 
+    #tabella {
+      border-collapse: collapse;
+      width: 100%;
+    }
 
-#tabella {
-  border-collapse: collapse;
-  width: 100%;
-}
+    #tabella th,
+    #tabella td {
+      border: 1px solid #999;
+      padding: 5px;
+      text-align: left;
+    }
 
-#tabella th,
-#tabella td {
-  border: 1px solid #999;
-  padding: 5px;
-  text-align: left;
-}
+    .chart {
+      display: flex;
+      justify-content: space-between;
+      height: 250px;
+    }
 
-.chart {
-  display: flex;
-  justify-content: space-between;
-  height: 250px;
-}
+    .chart-bar {
+      width: 20px;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
 
-.chart-bar {
-  width: 20px;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-}
+    .chart-bar span {
+      width: 100%;
+    }
 
-.chart-bar span {
-  width: 100%;
-}
+    .error {
+      border: 1px solid red;
+    }
+    .input-row {
+      display: flex;
+      margin-bottom: 10px;
+    }
 
-.error {
-  border: 1px solid red;
-}
-.input-row {
-  display: flex;
-  margin-bottom: 10px;
-}
+    .input-row label {
+      width: 100px;
+      text-align: left;
+      margin-right: 10px;
+    }
 
-.input-row label {
-  width: 100px;
-  text-align: left;
-  margin-right: 10px;
-}
-
-#max_spesa {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+    #max_spesa {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    
     <div class="blue-section">
         <form id="form">
           <div class="input-row">
@@ -108,6 +108,7 @@
               <!-- Opzioni per i mesi -->
             </select>
           </div>
+
           <div class="input-row">
             <label for="type">Tipologia:</label>
             <select id="type">
@@ -137,12 +138,14 @@
       </table>
     </div>
   </div>
+
   <div class="yellow-section">
     <div id="max_spesa"></div>
     <div class="chart" id="expenses-chart">
       <!-- Le barre saranno aggiunte dinamicamente da JavaScript -->
     </div>
   </div>
+
   <script>
     const form = document.getElementById("form");
     const descInput = document.getElementById("desc");
@@ -164,134 +167,135 @@
       monthSelect.appendChild(option);
     });
     
-// Dati delle spese
+    // Dati delle spese
 
-const expensesData = {
-  Casa: Array(12).fill(0),
-  Trasporto: Array(12).fill(0),
-  Alimentari: Array(12).fill(0)
-};
+    const expensesData = {
+      Casa: Array(12).fill(0),
+      Trasporto: Array(12).fill(0),
+      Alimentari: Array(12).fill(0)
+    };
 
-// Totale dell'ammontare per ogni mese
+    // Totale dell'ammontare per ogni mese
 
-const totalAmounts = Array(12).fill(0);
+    const totalAmounts = Array(12).fill(0);
 
-// Aggiunge una spesa alla tabella e al grafico
+    // Aggiunge una spesa alla tabella e al grafico
 
-function addExpense(desc, amount, month, type) {
-  // Aggiunge una riga alla tabella
+    function addExpense(desc, amount, month, type) {
+      // Aggiunge una riga alla tabella
 
-  const row = tableBody.insertRow();
-  row.insertCell().textContent = desc;
-  row.insertCell().textContent = amount;
-  row.insertCell().textContent = months[month - 1];
-  row.insertCell().textContent = type;
+    const row = tableBody.insertRow();
+    row.insertCell().textContent = desc;
+    row.insertCell().textContent = amount;
+    row.insertCell().textContent = months[month - 1];
+    row.insertCell().textContent = type;
 
-  // Aggiorna i dati delle spese
+    // Aggiorna i dati delle spese
 
-  expensesData[type][month - 1] += amount;
-  totalAmounts[month - 1] += amount;
+    expensesData[type][month - 1] += amount;
+    totalAmounts[month - 1] += amount;
 
-  // Aggiorna il grafico
+    // Aggiorna il grafico
 
-  updateChart();
-}
-
-    
-// Aggiorna il grafico delle spese
-
-function updateChart() {
-  chart.innerHTML = '';
-
-  const maxTotalAmount = Math.max(...totalAmounts);
-  const scaleFactor = 250 / maxTotalAmount;
-
-  for (let i = 0; i < 12; i++) {
-    const bar = document.createElement("div");
-    bar.className = "chart-bar";
-
-    const monthLabel = document.createElement("span");
-    monthLabel.textContent = i + 1;
-    monthLabel.style.marginTop = "5px";
-    bar.appendChild(monthLabel);
-
-    for (const type of ["Casa", "Trasporto", "Alimentari"]) {
-      const span = document.createElement("span");
-      span.style.backgroundColor = type === "Casa" ? "blue" : type === "Trasporto" ? "red" : "green";
-      span.style.height = `${expensesData[type][i] * scaleFactor}px`;
-      bar.appendChild(span);
+    updateChart();
     }
 
-    chart.appendChild(bar);
-  }
-
-  // Trova il mese con l'ammontare maggiore
-
-  const maxMonth = totalAmounts.reduce(
-    (max, amount, index) => (amount > max.amount ? { month: index + 1, amount } : max),
-    { month: -1, amount: 0 }
-  );
-
-  // Visualizza il valore complessivo dell'ammontare maggiore
-
-  maxSpesaElement.textContent = `Ammontare totale: ${maxMonth.amount} - Mese: ${months[maxMonth.month - 1]}`;
-}
     
-    // Gestisce il submit del form
+  // Aggiorna il grafico delle spese
 
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-    
-      // Validazione dei campi
+    function updateChart() {
+      chart.innerHTML = '';
 
-      const desc = descInput.value.trim();
-      const amount = parseInt(amountInput.value);
-      const month = parseInt(monthSelect.value);
-      const type = typeSelect.value;
-    
-      let hasError = false;
-      if (!desc) {
-        descInput.classList.add("error");
-        hasError = true;
-      } else {
-        descInput.classList.remove("error");
+      const maxTotalAmount = Math.max(...totalAmounts);
+      const scaleFactor = 250 / maxTotalAmount;
+
+      for (let i = 0; i < 12; i++) {
+        const bar = document.createElement("div");
+        bar.className = "chart-bar";
+
+        const monthLabel = document.createElement("span");
+        monthLabel.textContent = i + 1;
+        monthLabel.style.marginTop = "5px";
+        bar.appendChild(monthLabel);
+
+        for (const type of ["Casa", "Trasporto", "Alimentari"]) {
+          const span = document.createElement("span");
+          span.style.backgroundColor = type === "Casa" ? "blue" : type === "Trasporto" ? "red" : "green";
+          span.style.height = `${expensesData[type][i] * scaleFactor}px`;
+          bar.appendChild(span);
+        }
+
+        chart.appendChild(bar);
       }
-    
-      if (!amount || isNaN(amount)) {
-        amountInput.classList.add("error");
-        hasError = true;
-      } else {
-        amountInput.classList.remove("error");
-      }
-    
-      if (!month || isNaN(month)) {
-        monthSelect.classList.add("error");
-        hasError = true;
-      } else {
-        monthSelect.classList.remove("error");
-      }
-    
-      if (!type) {
-        typeSelect.classList.add("error");
-        hasError = true;
-      } else {
-        typeSelect.classList.remove("error");
-      }
-    
-      if (hasError) {
-        return;
-      }
-    
-      // Inserisce una nuova spesa
 
-      addExpense(desc, amount, month, type);
-    
-      // Resetta il form
+      // Trova il mese con l'ammontare maggiore
 
-      form.reset();
-      monthSelect.selectedIndex = 0;
-      typeSelect.selectedIndex = 0;
-    });</script>
+      const maxMonth = totalAmounts.reduce(
+        (max, amount, index) => (amount > max.amount ? { month: index + 1, amount } : max),
+        { month: -1, amount: 0 }
+      );
+
+      // Visualizza il valore complessivo dell'ammontare maggiore
+
+      maxSpesaElement.textContent = `Ammontare totale: ${maxMonth.amount} - Mese: ${months[maxMonth.month - 1]}`;
+    }
+        
+      // Gestisce il submit del form
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+      
+        // Validazione dei campi
+
+        const desc = descInput.value.trim();
+        const amount = parseInt(amountInput.value);
+        const month = parseInt(monthSelect.value);
+        const type = typeSelect.value;
+      
+        let hasError = false;
+        if (!desc) {
+          descInput.classList.add("error");
+          hasError = true;
+        } else {
+          descInput.classList.remove("error");
+        }
+      
+        if (!amount || isNaN(amount)) {
+          amountInput.classList.add("error");
+          hasError = true;
+        } else {
+          amountInput.classList.remove("error");
+        }
+      
+        if (!month || isNaN(month)) {
+          monthSelect.classList.add("error");
+          hasError = true;
+        } else {
+          monthSelect.classList.remove("error");
+        }
+      
+        if (!type) {
+          typeSelect.classList.add("error");
+          hasError = true;
+        } else {
+          typeSelect.classList.remove("error");
+        }
+      
+        if (hasError) {
+          return;
+        }
+      
+        // Inserisce una nuova spesa
+
+        addExpense(desc, amount, month, type);
+      
+        // Resetta il form
+
+        form.reset();
+        monthSelect.selectedIndex = 0;
+        typeSelect.selectedIndex = 0;
+      });
+  </script>
 </body>
 </html>
 
