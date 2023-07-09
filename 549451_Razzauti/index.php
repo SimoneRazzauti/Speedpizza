@@ -1,7 +1,8 @@
-<!DOCTYPE html>
 <?php
-session_start();
+  session_start();
 ?>
+
+<!DOCTYPE html>
 <html lang="it">
 <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,9 +28,9 @@ include("checkCOOKIE.php"); //se l'utente è Loggato non richiede i dati ma util
 
   <div class="container">
   <div class="slider">
-    <img class="active" src="https://source.unsplash.com/gKk9rpyDryU">
-    <img src="https://source.unsplash.com/VFGEhLznjPU">
-    <img src="https://source.unsplash.com/InR-EhiO_js">
+    <img class="active" src="./immagini/home1.jpg">
+    <img src="./immagini/home2.jpg">
+    <img src="./immagini/home3.jpg">
   </div>
   <nav class="slider-nav">
     <ul>
@@ -49,10 +50,10 @@ include("checkCOOKIE.php"); //se l'utente è Loggato non richiede i dati ma util
 
 <script>
 	const items = document.querySelectorAll('img');
-const itemCount = items.length;
-const nextItem = document.querySelector('.next');
-const previousItem = document.querySelector('.previous');
-let count = 0;
+  const itemCount = items.length;
+  const nextItem = document.querySelector('.next');
+  const previousItem = document.querySelector('.previous');
+  let count = 0;
 
 function showNextItem() {
   items[count].classList.remove('active');

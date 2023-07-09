@@ -250,7 +250,9 @@ form input[type="submit"], input[type="reset"] {
 		</select><br />
 <?php }?><br />
 
-  <input type="submit" name="ok" value="Conferma formazione" onclick="campoVuoto();"/><br> <input type="reset" value="Annulla"/>
+  <input type="submit" name="ok" value="Conferma formazione" onclick="campoVuoto();"/><br> 
+  <input type="reset" value="Annulla"/><br>
+  <a href = "users.php">Indietro</a> 
 </form> 
 <?php
   if(isset($_POST['ok'])){
