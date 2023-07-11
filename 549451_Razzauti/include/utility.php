@@ -535,14 +535,13 @@ function updateClassifica($con)
 
 function template_footer() {
 echo '
-<footer>
+	<footer>
         <div class="footer-content">
-            <h3>NOME</h3>
-            <p>Testo</p>
-            
+            <h3>FantaBall</h3>
+            <p>kick your ambitions</p>
         </div>
         <div class="footer-bottom">
-            <p>copyright &copy; <a href="#">NOME</a>  </p>
+            <p>copyright &copy; <a href="index.php">NOME</a>  </p>
                     <div class="footer-menu">
                       <ul class="f-menu">
                         <li><a href="">Home</a></li>
@@ -552,8 +551,7 @@ echo '
                       </ul>
                     </div>
         </div>
-
-    </footer>
+	</footer>
 ';
 }
 
@@ -571,9 +569,9 @@ function template_menu() {
 
     <ul class="menu__box">
       <li><a class="menu__item" href="index.php">Home</a></li>
-			<li><a class="menu__item" href="registrazione.php">registrazione</a></li>
-			<li><a class="menu__item" href="login.php">login</a></li>
-			<li><a class="menu__item" href="tutorial.html">tutorial</a></li>
+			<li><a class="menu__item" href="registrazione.php">Registrazione</a></li>
+			<li><a class="menu__item" href="login.php">Login</a></li>
+			<li><a class="menu__item" href="tutorial.html">Tutorial</a></li>
     </ul>
   </div>';
 	}

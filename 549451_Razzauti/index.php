@@ -1,7 +1,7 @@
 <?php
   session_start();
   include("checkCOOKIE.php"); //se l'utente è Loggato non richiede i dati ma utilizza i cookie salvati
-?>
+  ?>
 
 <!DOCTYPE html>
 <html lang="it">
@@ -18,26 +18,23 @@
   </head>
   
   <body>
+    <?=template_menu();?>
     <div class="container">
       <div class="slider">
-        <img class="active" src="./immagini/homepage.png">
-        <img src="./immagini/homepage.png">
-        <img src="./immagini/homepage.png">
+        <img class="active" src="./immagini/homepage1.png">
+        <img src="./immagini/homepage2.png">
+        <img src="./immagini/homepage3.png">
       </div>
       <nav class="slider-nav">
         <ul>
           <li class="arrow">
             <button class="previous">
-              PREV
-              <!-- <img src="./immagini/LeftArrow.png" alt="leftArrow">
-              -->
+              <input type="image" src="./immagini/LeftArrow.png" alt="leftArrow" height="100px">
             </button>
           </li>
           <li class="arrow">
             <button class="next">
-              <!-- <img src="./immagini/RightArrow.png" alt="rightArrow">
-              -->
-              NEXT
+              <input type="image" src="./immagini/RightArrow.png" alt="rightArrow" height="100px">
             </button>
           </li>
         </ul>
@@ -92,8 +89,7 @@ previousItem.addEventListener('click', showPreviousItem);
 document.addEventListener('keydown', keyPress);
 </script>
 
-<?=template_menu()?>
-<?=template_footer()?>
+<?=template_footer();?>
 </body>
 </html>
 
