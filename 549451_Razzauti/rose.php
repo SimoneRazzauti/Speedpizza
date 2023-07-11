@@ -159,10 +159,6 @@ $con = NULL;
 ?> 
 </table></div><br />
 
-
-
-
   <span id="tornaIndietro"><a href="users.php"></a></span>
-
 </body>
 </html>

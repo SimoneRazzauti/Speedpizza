@@ -23,6 +23,7 @@ $con = NULL;
 	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/registrazione.css">
 	<link rel="stylesheet" href="css/stileMenu.css"  type="text/css">
+	<link rel="icon" href = "./immagini/favicon.ico" type = "image/x-icon">
 
 	<style>
 	footer{

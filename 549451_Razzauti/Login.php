@@ -10,9 +10,10 @@ include("checkCOOKIE.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- per "visualizzare" mobile -->
 
     <title> Login </title>
-	<link rel="stylesheet" href="css/stileLogin.css"  type="text/css">
+    <link rel="icon" href = "./immagini/favicon.ico" type = "image/x-icon">
+	  <link rel="stylesheet" href="css/stileLogin.css"  type="text/css">
 		<link rel="stylesheet" href="css/footer.css"  type="text/css">
-	<link rel="stylesheet" href="css/stileMenu.css"  type="text/css">
+	  <link rel="stylesheet" href="css/stileMenu.css"  type="text/css">
 
 
 

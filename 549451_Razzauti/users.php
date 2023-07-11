@@ -1,24 +1,21 @@
 <?php
 session_start();
 include_once("include/config.php");
-include("include/utility.php");
-
-
+ include("include/utility.php");
 		$con = config::connect();
 if(!isset($_SESSION['username']) || $_SESSION['name'] == "admin"){
   header('Location: login.php?error=2'); //non autenticato
   exit;
 }
 
-
 $query = $con->prepare("
-		SELECT idPartita, dataPartita-interval 1 hour  AS dataPartita FROM calendario WHERE stato = 1;
-	");
+SELECT idPartita, dataPartita-interval 1 hour  AS dataPartita FROM calendario WHERE stato = 1;
+");
 $query->execute();
 while ($partita = $query->fetch())
 {
   if( strtotime(date("Y-m-d H:i:s")) > strtotime($partita[1])) //evento che blocca o sblocca l'inserimento della formazione di una data partita all'accesso come user o come admin
-    modificaStatoPartita($con, $partita[0], 0);  
+  modificaStatoPartita($con, $partita[0], 0);  
 }
 $con = NULL;    
 ?>
@@ -30,12 +27,19 @@ $con = NULL;
     <link href="css/pop.css" rel="stylesheet">
     <link href="css/table.css" rel="stylesheet">
     <link href="css/menuLog.css" rel="stylesheet">
-
+    <link href="css/footer.css" rel="stylesheet">
+    <link rel="icon" href = "./immagini/favicon.ico" type = "image/x-icon">
 
 <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    footer{
+      position: relative!important;
+      margin-bottom: 0;
+    }
+  </style>
 	<title><?php echo $_SESSION['username'] ?> HOMEPAGE</title>
   <script type="application/x-javascript">
     function welcome(){
@@ -128,9 +132,6 @@ margin-top: 15px;max-height: 270px;">
 
   if ($cookiePOP=="1")
   {
-
-
-
         setcookie("PopUP", "", time() - 3600);
     echo "<script>
             function chiudi(){
@@ -142,28 +143,10 @@ margin-top: 15px;max-height: 270px;">
             setTimeout(function(){
               modal.style.display = 'none';
              }, 4000);
-
-            
-            
-            
-            
                </script>";
   }
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <b><h1 style="text-align: center;"> Homepage di <?=$_SESSION['username']?></h1></b><br />
 
 
@@ -236,13 +219,6 @@ $query = $con->prepare("SELECT idPartita, nGiornata, dataPartita, squadraA, squa
 $query->bindParam(":squadra", $_SESSION['squadra']);
 $query->execute();
 
-
-
-
-
-
-
-
 while ($partita = $query->fetch())
 {
   echo '<div class="table-wrapper">';
@@ -273,6 +249,6 @@ while ($partita = $query->fetch())
 $con = NULL;
 
 ?> 
-
+<?=template_footer();?>
 </body>
 </html>
