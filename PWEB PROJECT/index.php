@@ -120,7 +120,7 @@ echo '<td><a onclick="openmodal2()"><strong>'.' '. $_SESSION["username"] . '</st
   &nbsp;
   N&ordm;Persone:
   <input type="number" name="numb" min="1" max="6" onkeydown="return false" required>
-  <input type="submit" name="save" value="Submit">
+  <input type="submit" name="save" value="Conferma!">
 </form>
 </div>
  <?php /* Validation */

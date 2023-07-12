@@ -212,3 +212,35 @@ h1{
   font-family: Raleway, sans-serif;
   width: 90%;
 }
+
+#reservation{
+  position: absolute;
+  width: 90%;
+  height: 35vw;
+  left: 5%;
+  top: 232vw;
+  background-color: white;
+}
+
+#reservation h2{
+  position: absolute;
+  left: 5%;
+  font-size: 1.8vw;
+  font-family: Raleway, sans-serif;
+}
+
+#reservation img{
+  width: 70%;
+  position: absolute;
+  top: 7vw;
+  left: 13vw;
+}
+
+#reservation p{
+  position: absolute;
+  left: 5%;
+  top: 27vw;
+  font-size: 1.2vw;
+  font-family: Raleway, sans-serif;
+  width: 90%;
+}
