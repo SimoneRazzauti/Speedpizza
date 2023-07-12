@@ -300,8 +300,8 @@ echo '<td><a onclick="openmodal2()"><strong>'.' '. $_SESSION["username"] . '</st
       <p>Creando un account accetti i nostri <a href="#" style="color:dodgerblue">Termini e Condizioni</a>.</p>
 
       <div class="clearfix">
-        <button type="button" onclick="closemodal1()" class="cancelbutn" id="modal1button_cancel">Cancel</button>
-        <button type="submit" class="signupbtn" id="modal1button_signup">Sign Up</button>
+        <button type="button" onclick="closemodal1()" class="cancelbutn" id="modal1button_cancel">Annulla</button>
+        <button type="submit" class="signupbtn" id="modal1button_signup">Conferma</button>
       </div>
       <?php
 
@@ -358,14 +358,14 @@ echo '<td><a onclick="openmodal2()"><strong>'.' '. $_SESSION["username"] . '</st
 <!-- Fine Modal Registrazione -->
 <footer class="contacts" id="contatti">
 	<h2> Vieni a trovarci! </h2>
-	<p id="leftp"> Via Filippo Turati, 12 <br>
-	56125 Pisa PI <br> <br>
+	<p id="leftp"> Corso Giuseppe Mazzini, 32 <br>
+	57126 Livorno LI <br> <br>
 	Tutti i giorni: <br>
 	dalle 12:30 alle 15:30 <br>
 	dalle 18:30 alle 00:30 <br> <br>
 	Email: <a href="mailto:indirizzo@email.com">fastpizza@inc.corporation.it</a></p>
-	<p id="copyright"> While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 2017-2018 by FastPizza Inc. All Rights Reserved. </p>
-	<div id="map" onclick="location.href = 'https://www.google.com/maps/place/Via+Filippo+Turati,+12,+56125+Pisa+PI/@43.7126809,10.3991586,17z/data=!3m1!4b1!4m5!3m4!1s0x12d59199440ab5c9:0x7950e3edf0d20800!8m2!3d43.7126809!4d10.4013473';"> </div>
+	<p id="copyright"> While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright &copy 2023 by FastPizza Inc. All Rights Reserved. </p>
+	<div id="map" onclick="location.href = 'https://www.google.com/maps/place/Corso+Giuseppe+Mazzini,+32,+57126+Livorno+LI/@43.5439481,10.3115133,19z/data=!4m6!3m5!1s0x12d5e9709e3dceab:0x1071aa61ab7235ab!8m2!3d43.5442401!4d10.3121772!16s%2Fg%2F11c29qlpqg?entry=ttu';"> </div>
 	<img src="immagini/arrow-up.png" alt="freccia" onclick="scrollup()" style="cursor: pointer;">
 </footer>
 <script src="JS/mainscript.js"> </script>
