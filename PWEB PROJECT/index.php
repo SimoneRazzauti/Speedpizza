@@ -1,52 +1,32 @@
 <?php
 session_start();
-require('inc/db.php');
+require('inc/db.php'); # chiamata al db
+include('utility/function.php'); # funzioni di utilità
 ?>
 <!DOCTYPE html>
 <html lang="it">
 	<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Fastpizza Home </title>
-	<link href="CSS/stilemain.css" rel="stylesheet" type="text/css">
-	<link rel="icon" href="immagini/icon.png" sizes="32x32">
+    <link href="CSS/stilemain.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="immagini/icon.png" sizes="32x32">
 	</head>
 <body>
-<nav class="topnav">
- <table>
-  <tr>
-    <td><a onclick="scrollup()">Home</a></td>
-    <td><a href="#hr1">Promozioni</a></td>
-    <td><a href="creation.php">Ordina Online</a></td>
-    <td><a href="#hr2">Prenotazione</a></td>
-    <td><a href="#contatti">Contatti</a></td>
-	
-	<?php /* Verifica se l'utente è loggato e nel caso mostra il bottone con il nome */
-	if(!isset($_SESSION["username"])){
 
-echo '
-    <td> <a onclick="openmodal()">Login</a></td>
-    <td> <a onclick="openmodal1()">Registrati</a></td>';
-	
-}else{
-echo '<td><a onclick="openmodal2()"><strong>'.' '. $_SESSION["username"] . '</strong></a></td>';
-}
-?>
-	<td><a href="carrello.php">Il Mio Carrello</a></td>
-  </tr>
-</table>
-</nav>
+<!-- Template per il menù -->
+<?=template_menu();?>
+
+<!-- Template per i collegamenti social -->
 <aside class="rightnav"> 
-  <table>
-   <tr>
-   	<td id="facebook"></td>
-   </tr>
-   <tr>
-   	<td id="instagram"></td>
-   </tr>
-   <tr>
-   	<td id="google"></td>
-   </tr>
-  </table>
+  <div class="social-links">
+    <a href="#" id="facebook"></a>
+    <a href="#" id="instagram"></a>
+    <a href="#" id="google"></a>
+  </div>
 </aside>
+
 <aside class="tutorial">
   <div> <img src="./immagini/alert_icon.png" alt="alert"> </div>
   <p> <a href="documentazione.html"> Tutorial ! </a> </p>

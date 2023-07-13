@@ -1,10 +1,4 @@
 /* Main */
-
-@font-face { font-family: Raleway; src: url('http://localhost/Progetto%20PWEB/CSS/Font/Raleway-Regular.ttf'); } 
-@font-face { font-family: 'Franklin Gothic Book'; src: url('http://localhost/Progetto%20PWEB/CSS/Font/franklin-gothic-book.ttf'); } 
-@font-face { font-family: Ikaros; src: url('http://localhost/Progetto%20PWEB/CSS/Font/Ikaros-Regular.otf'); } 
-@font-face { font-family: Circular; src: url('http://localhost/Progetto%20PWEB/CSS/Font/CircularSTD-Medium.otf'); } 
-
 body {
     overflow-x: hidden;
     height: 100%;
@@ -13,102 +7,139 @@ body {
 .topnav{
   position: fixed;
   top: 0;
-  width: 98.8%;
-  height: 4.09vw;
+  width: 100%;
+  height: auto;
   z-index: 300;
-    background-color: black;
-    overflow: hidden;
+  background-color: black;
+  overflow: hidden;
 }
 
-.topnav table{
-  margin:auto;
+.menu-items{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.topnav td a{
-    position:relative;
-    top: 0.95vw;
-    color: #f2f2f2;
-    text-align: center;
-    font-family: 'Franklin Gothic Book', sans-serif;
-    padding: 1.2vw 1.1vw;
-    text-decoration: none;
-    font-size: 1.5VW;
-    height: 4vw;
+.menu-items a{
+  position:relative;
+  top: 0.95vw;
+  color: #f2f2f2;
+  text-align: center;
+  font-family: 'Franklin Gothic Book', sans-serif;
+  padding: 1.2vw 1.1vw;
+  text-decoration: none;
+  font-size: 1.5vw;
+  height: 4vw;
+  flex: 1 0 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
 }
 
-.topnav td a:hover {
-    background-color: white;
-    color: black;
-    cursor: pointer;
+.menu-items a:hover {
+  background-color: #f2f2f2;
+  color: black;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .menu-items a {
+    flex: 1 0 auto;
+    height: auto;
+  }
 }
 
 .rightnav {
-	position: fixed;
-	right: 0.5vw;
-	top: 85px;
-	background-color: rgba(255,255,255,0.5);
-	border-radius: 5px;
-	z-index: 300;
-  width: 3vw;
-  height: 9vw;
+  position: fixed;
+  right: 1vw;
+  top: 85px;
+  background-color: transparent;
+  border-radius: 5px;
+  z-index: 300;
+  width: 12vw;
+  height: auto;
 }
 
-.rightnav table{
-	margin: auto;
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vw;
 }
 
-.rightnav table td{
-  width: 2.5vw;
-  height: 2.5vw;
-  position: relative;
-  top: 0.2vw;
+.social-links a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  outline: none;
+  background-color: transparent;
 }
 
-#instagram{
-  width: 100%;
-  background-image: url('../immagini/instagram_icon_black.png');
-  background-size: cover;
-  background-repeat:   no-repeat;
-  background-position: center center;   
+#facebook {
+  background-image: url("../immagini/facebook_icon_black.png");
 }
 
-#instagram:hover{
+#facebook:hover {
   cursor: pointer;
-  background-image: url('../immagini/instagram_icon_color.png');
-  background-size: cover;
-  background-repeat:   no-repeat;
-  background-position: center center;   
+  background-image: url("../immagini/facebook_icon_color.png");
 }
 
-#facebook{
-  width: 100%;
-  background-image: url('../immagini/facebook_icon_black.png');
-  background-size: cover;
-  background-repeat:   no-repeat;
-  background-position: center center;   
+#instagram {
+  background-image: url("../immagini/instagram_icon_black.png");
 }
 
-#facebook:hover{
+#instagram:hover {
   cursor: pointer;
-  background-image: url('../immagini/facebook_icon_color.png');
-  background-size: cover;
-  background-repeat:   no-repeat;
-  background-position: center center;   
+  background-image: url("../immagini/instagram_icon_color.png");
 }
 
-#google{
-  background-image: url('../immagini/google_icon_black.png');
-  background-size: cover;
-  background-repeat:   no-repeat;
-  background-position: center center;   
+#google {
+  background-image: url("../immagini/google_icon_black.png");
 }
 
-#google:hover{
+#google:hover {
   cursor: pointer;
-  background-image: url('../immagini/google_icon_color.png');
-  background-size: cover;
-  background-repeat:   no-repeat;
-  background-position: center center;   
+  background-image: url("../immagini/google_icon_color.png");
+}
+
+@media screen and (max-width: 768px) {
+  .rightnav {
+    top: 70px;
+    right: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .social-links {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1vw 5vw;
+  }
+
+  .social-links a {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+  }
+  
+  #facebook {
+    background-image: url("../immagini/facebook_icon_black_mobile.png");
+    background-size: cover;
+  }
+  
+  #instagram {
+    background-image: url("../immagini/instagram_icon_black_mobile.png");
+    background-size: cover;
+  }
+  
+  #google {
+    background-image: url("../immagini/google_icon_black_mobile.png");
+    background-size: cover;
+  }
 }
 
 .tutorial{

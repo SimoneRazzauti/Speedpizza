@@ -45,20 +45,6 @@ echo '<td><a onclick="openmodal2()"><strong>'.' '. $_SESSION["username"] . '</st
 <div id="intestazione">
 	<h1> FASTPIZZA </h1>
 </div>
-<aside class="rightnav"> 
-  <table>
-   <tr>
-   	<td id="facebook"></td>
-   </tr>
-   <tr>
-   	<td id="instagram"></td>
-   </tr>
-   <tr>
-   	<td id="google"></td>
-   </tr>
-  </table>
-</aside>
-
 <form id="form1" action="test.php" method="post" name="form1">
 <section id="selezioneImpasti">
 <h2>&#8226; Scegli il tuo impasto</h2>
