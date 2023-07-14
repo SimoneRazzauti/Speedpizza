@@ -359,49 +359,67 @@ body {
 }
 
 .promotions {
-	position: relative;
-	top: 6vw;
+  position: relative;
+  top: 6vw;
 }
 
-.promotions table {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 50%;
-    position: relative;
-    left: 25%;
+.promotion {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4vw;
 }
 
-.promotions td {
-	width: 33%;
-    height: 22vw;
-    text-align: center;
-    vertical-align: middle;
-    padding: 0 1vw;
-    font-family: Circular, sans-serif;
-    font-size: 1.3vw;
-
+.promotion-image {
+  flex: 0 0 35%;
+  height: 22vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
-#image1{
-	background-image: url('../immagini/tutorial.jpg');
-	background-repeat:   no-repeat;
-	background-size: 22vw;
-	background-position: center center;
+.promotion-content {
+  flex: 0 0 65%;
+  padding: 0 2vw;
 }
 
-#image2{
-	background-image: url('../immagini/sardine.jpg');
-	background-repeat:   no-repeat;
-	background-size: cover;
-  background-position: center center; 
+.promotion-content h2 {
+  color: #505050;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2vw;
+  margin-bottom: 1vw;
 }
 
+.promotion-content p {
+  color: #505050;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2vw;
+}
 
-#image3{
-	background-image: url('../immagini/order.jpg');
-	background-repeat:   no-repeat;
-	background-size: 15vw;
-    background-position: center center; 
+#image1 {
+  background-image: url('../immagini/tutorial.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 22vw;
+  height: 22vw;
+}
+
+#image2 {
+  background-image: url('../immagini/sardine.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 22vw;
+  height: 22vw;
+}
+
+#image3 {
+  background-image: url('../immagini/order.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 22vw;
+  height: 22vw;
 }
 
 
