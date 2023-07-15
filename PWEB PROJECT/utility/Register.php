@@ -1,6 +1,6 @@
 <?php
 require('../inc/db.php');
-// If form submitted, insert values into the database.
+// SE IL FORM E' STATTO SOTTOMESSO SALVA NEL DB LE INFORMAZIONI UTENTE
 session_start();
 
     function test_input($data) {
@@ -10,7 +10,7 @@ session_start();
      return $data;
     }
 
-        // removes backslashes
+    // RIMUOVE GLI SPAZI
     $error = NULL;
 
     if (empty($_POST["email"])) { /* Email */
@@ -195,6 +195,7 @@ session_start();
 
 	$trn_date = date("Y-m-d");
 
+    // SE NON CI SONO ERORRI INSERISCO I VALORI NEL DB 
     if($error == NULL){
 
     $query = "INSERT into `users` (email, nome, cognome, username, password, citta, indirizzo, cap, trn_date)
@@ -204,8 +205,10 @@ session_start();
 
 
     $_SESSION['username'] = $username;
+    $messaggio_benvenuto = "Benvenuto! Grazie per esserti registrato.";
+    header('Location: ../info.php?welcome=' . urlencode($messaggio_benvenuto));
+    exit;
 
-    header("location: ../index.php");
         
     } else header('location: ../index.php')
 

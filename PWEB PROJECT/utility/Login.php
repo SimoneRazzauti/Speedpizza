@@ -38,7 +38,7 @@ if (isset($_POST['username'])){
 
 
 
-header("location: ../index.php");
+header("location: ../info.php");
          }else{
       $_SESSION['error'] = "Username o Password errati. Riprova.";
       header("location: ../index.php");

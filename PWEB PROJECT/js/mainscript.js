@@ -70,8 +70,8 @@ function closeMenu() {
 
 	var element = document.getElementById('firstname');
 
-	element.addEventListener('webkitAnimationEnd', function(){ 
-   	 this.style.webkitAnimationName = '';
+	element.addEventListener('animationEnd', function(){ 
+   	 this.style.animationName = '';
 	}, false);
 
 	function validateForm(){
@@ -166,28 +166,28 @@ window.onclick = function(event) {
 
 	var element_email = document.getElementById('modal1_email');
 
-	element_email.addEventListener('webkitAnimationEnd', function(){ 
-   	 this.style.webkitAnimationName = '';
+	element_email.addEventListener('animationEnd', function(){ 
+   	 this.style.animationName = '';
 	}, false);
 
-	document.getElementById('modal1_nome').addEventListener('webkitAnimationEnd', function(){ 
-   	 this.style.webkitAnimationName = '';
+	document.getElementById('modal1_nome').addEventListener('animationEnd', function(){ 
+   	 this.style.animationName = '';
 	}, false);
 
-	document.getElementById('modal1_surname').addEventListener('webkitAnimationEnd', function(){ 
-   	 this.style.webkitAnimationName = '';
+	document.getElementById('modal1_surname').addEventListener('animationEnd', function(){ 
+   	 this.style.animationName = '';
 	}, false);
 
-	document.getElementById('modal1_password').addEventListener('webkitAnimationEnd', function(){ 
-   	 this.style.webkitAnimationName = '';
+	document.getElementById('modal1_password').addEventListener('animationEnd', function(){ 
+   	 this.style.animationName = '';
 	}, false);
 
-	document.getElementById('modal1_repeat').addEventListener('webkitAnimationEnd', function(){ 
-   	 this.style.webkitAnimationName = '';
+	document.getElementById('modal1_repeat').addEventListener('animationEnd', function(){ 
+   	 this.style.animationName = '';
 	}, false);
 
-	document.getElementById('modal1_cap').addEventListener('webkitAnimationEnd', function(){ 
-   	 this.style.webkitAnimationName = '';
+	document.getElementById('modal1_cap').addEventListener('animationEnd', function(){ 
+   	 this.style.animationName = '';
 	}, false);
 
 	function validateFormRegister(){
@@ -197,7 +197,7 @@ window.onclick = function(event) {
 	var _email = document.forms["register"]["email"].value; /* email inserita */
 
 	if(!validateEmail(_email)){
-		document.getElementById("modal1_email").style.webkitAnimation = "shake .5s"; /*animazione keyframe shake sull'input*/
+		document.getElementById("modal1_email").style.animation = "shake .5s"; /*animazione keyframe shake sull'input*/
 		document.getElementById("modal1_email").style.backgroundColor = "#f44336"; /* setta colore input a red */
 		element_email.focus();
 		document.getElementById("error_email").style.display='block';
@@ -212,7 +212,7 @@ window.onclick = function(event) {
 	var _nomeform = document.forms["register"]["nome"].value; /* Nome inserito */
 
 	if(!validateNameInput(_nomeform)){ /* Controlla nome dai 4 ai 10 caratteri composto solo da caratteri alfanumerici */
-		document.getElementById("modal1_nome").style.webkitAnimation = "shake .5s"; /*animazione keyframe shake sull'input*/
+		document.getElementById("modal1_nome").style.animation = "shake .5s"; /*animazione keyframe shake sull'input*/
 		document.getElementById("modal1_nome").style.backgroundColor = "#f44336"; /* setta colore input a red */
 		document.getElementById("modal1_nome").focus();
 		document.getElementById("error_nome").style.display='block';
@@ -227,7 +227,7 @@ window.onclick = function(event) {
 	var _cognome = document.forms["register"]["surname"].value; /* Cognome inserito */
 
 	if(!validateNameInput(_cognome)){ /* Controlla cognome dai 4 ai 10 caratteri composto solo da caratteri alfanumerici */
-		document.getElementById("modal1_surname").style.webkitAnimation = "shake .5s"; /*animazione keyframe shake sull'input*/
+		document.getElementById("modal1_surname").style.animation = "shake .5s"; /*animazione keyframe shake sull'input*/
 		document.getElementById("modal1_surname").style.backgroundColor = "#f44336"; /* setta colore input a red */
 		document.getElementById("modal1_surname").focus();
 		document.getElementById("error_surname").style.display='block';
@@ -242,7 +242,7 @@ window.onclick = function(event) {
 	var _password = document.forms["register"]["psw"].value; /* Password inserita */
 
 	if(!validatePassword(_password)){ /* Controlla password, almeno 8 caratteri di cui una lettera, un numero e un carattere speciale*/
-		document.getElementById("modal1_password").style.webkitAnimation = "shake .5s"; /*animazione keyframe shake sull'input*/
+		document.getElementById("modal1_password").style.animation = "shake .5s"; /*animazione keyframe shake sull'input*/
 		document.getElementById("modal1_password").style.backgroundColor = "#f44336"; /* setta colore input a red */
 		document.getElementById("modal1_password").focus();
 		document.getElementById("error_password").style.display='block';
@@ -257,7 +257,7 @@ window.onclick = function(event) {
 	var psw_repeat = document.forms["register"]["psw-repeat"].value; /* Password Ripetuta inserita */
 
 	if(psw_repeat != _password){
-		document.getElementById("modal1_repeat").style.webkitAnimation = "shake .5s"; /*animazione keyframe shake sull'input*/
+		document.getElementById("modal1_repeat").style.animation = "shake .5s"; /*animazione keyframe shake sull'input*/
 		document.getElementById("modal1_repeat").style.backgroundColor = "#f44336"; /* setta colore input a red */
 		document.getElementById("modal1_repeat").focus();
 		document.getElementById("error_repeat").style.display='block';
@@ -272,7 +272,7 @@ window.onclick = function(event) {
 	var _cap = document.forms["register"]["cap"].value; /* CAP inserito */
 
 	if(!validateCAP(_cap)){
-		document.getElementById("modal1_cap").style.webkitAnimation = "shake .5s"; /*animazione keyframe shake sull'input*/
+		document.getElementById("modal1_cap").style.animation = "shake .5s"; /*animazione keyframe shake sull'input*/
 		document.getElementById("modal1_cap").style.backgroundColor = "#f44336"; /* setta colore input a red */
 		document.getElementById("modal1_cap").focus();
 		document.getElementById("error_cap").style.display='block';
@@ -290,3 +290,25 @@ window.onclick = function(event) {
 
 	}
 
+
+// tasto per la password oscurata
+var timerIds = {}; // Variabile per memorizzare gli ID dei timer
+    
+function togglePasswordVisibility(inputId) {
+  var passwordInput = document.getElementById(inputId);
+  var passwordVisibilityButton = passwordInput.nextElementSibling;
+
+  if (passwordInput.type === "password") {
+	passwordInput.type = "text";
+	passwordVisibilityButton.classList.add("visible");
+	clearTimeout(timerIds[inputId]); // Cancella il timer precedente, se presente
+	timerIds[inputId] = setTimeout(function() {
+	  passwordInput.type = "password";
+	  passwordVisibilityButton.classList.remove("visible");
+	}, 5000); // Imposta il timer a 5 secondi (5000 millisecondi)
+  } else {
+	passwordInput.type = "password";
+	passwordVisibilityButton.classList.remove("visible");
+	clearTimeout(timerIds[inputId]); // Cancella il timer se l'utente ha fatto clic prima che scattasse
+  }
+}

@@ -1,5 +1,5 @@
 
-    <link rel="stylesheet" href="css/stileFooter.css">
+    <link rel="stylesheet" href="css/styleFooter.css">
  
 
         
