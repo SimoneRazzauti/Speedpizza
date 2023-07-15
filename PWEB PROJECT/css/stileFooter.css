@@ -1,0 +1,158 @@
+/* FOOTER */
+
+.contacts {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+  margin-top: 80px;
+  bottom: 0;
+}
+ 
+.contacts .div-left,
+.div-center .div-bottom,
+.div-right .div-top{
+  display: inline-block;
+  vertical-align: top;
+}  
+.div-top {
+  text-align: center;
+  margin-top: -55px;
+}
+  
+.div-top h2 {
+  color: #f2f2f2;
+  font-size: 5vw; 
+  font-family: Raleway, sans-serif;
+  margin-bottom: 20px;
+}
+  
+.div-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+  
+.div-left {
+  display: flex;
+  flex-direction: column;
+}
+  
+.contact-info {
+  text-align: left;
+}
+  
+.contact-info p {
+  color: #f2f2f2;
+  font-size: 1.6vw; 
+  font-family: Circular, sans-serif;
+  margin-top: 0;
+}
+
+.contact-info a {
+  color: #5383d3;
+}
+  
+.contact-social {
+  margin-top: 1vw; 
+}
+  
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+  
+.social-links a {
+  display: block;
+  width: 5vw;
+  height: 5vw;
+  margin: 1vw; 
+  background-repeat: no-repeat;
+  background-size: contain;
+  outline: none;
+  background-color: transparent;
+  transition: background-image 0.3s ease;
+}
+  
+#facebook {
+  background-image: url("../immagini/facebook_icon_color.png");
+}
+  
+#instagram {
+  background-image: url("../immagini/instagram_icon_color.png");
+}
+  
+#google {
+  background-image: url("../immagini/google_icon_color.png");
+}
+  
+.div-center {
+  text-align: center;
+  margin-top: 12vw; 
+}
+  
+.arrow-icon {
+  width: 9vw;
+  height: 11vw;
+  cursor: pointer;
+}
+  
+.div-right {
+  text-align: right;
+}
+  
+.map-container {
+  display: inline-block;
+  width: 34vw;
+  height: 34vw;
+  background-image: url('../immagini/map.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+  
+.div-bottom {
+  text-align: center;
+  margin-top: 6vw;
+  color: #f2f2f2;
+  font-size: 1.4vw;
+  font-family: Raleway, sans-serif;
+}
+  
+/* Responsive styles */
+@media (max-width: 768px) {
+  .div-top h2 {
+    font-size: 5vw;
+  }
+    
+  .div-content {
+    flex-direction: column;
+      align-items: center;
+  }
+    
+  .contact-info p,
+  .div-bottom {
+    font-size: 1.4vw;
+  }
+    
+  .div-center {
+    margin-top: 3vw; 
+  }
+    
+  .arrow-icon {
+    width: 5vw;
+    height: 6vw;
+  }
+    
+  .map-container {
+    display: none;
+  }
+}
+  

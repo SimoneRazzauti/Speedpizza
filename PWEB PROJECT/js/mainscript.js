@@ -1,3 +1,19 @@
+// Menu in modalità mobile
+function toggleDropdown() {
+  var dropdown = document.getElementById("myDropdown");
+  if (dropdown.style.display === "block") {
+    dropdown.style.display = "none";
+  } else {
+    dropdown.style.display = "block";
+  }
+}
+
+// Chiusura menu in modalità mobile
+function closeMenu() {
+  var dropdown = document.getElementById("myDropdown");
+  dropdown.style.display = "none";
+}
+
 /* setta la data corrente nella date form */
 
 	var date = new Date();
@@ -69,7 +85,7 @@
 		alert_x.style.display = "block"; /* fa apparire l'alert */
 		alert_x.style.backgroundColor = "#ff9741"; 
 		document.getElementById('alertbox').innerHTML += 'Warning: Impossibile inserire un nome con meno di 3 caratteri o con pi&ugrave; di 10!'; /* scrive nell'alert */
-		document.getElementById("firstname").style.webkitAnimation = "shake .5s"; /*animazione keyframe shake sull'input*/
+		document.getElementById("firstname").style.animation = "shake .5s"; /*animazione keyframe shake sull'input*/
 		document.getElementById("firstname").style.backgroundColor = "#f44336"; /* setta colore input a red */
 		return false;
 	}

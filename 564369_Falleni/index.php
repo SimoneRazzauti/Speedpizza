@@ -72,25 +72,8 @@
   </div>
   
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
     
-<div class="row">
-
-
-  
+<div class="row">  
   <div class="colonna">
   	<div class="card">
   	  <img src="immagini/utente.jpg" alt="immagine utente" />
@@ -102,12 +85,6 @@
 
 	</div>
   </div>
-  
-
-
-
-
-
   <div class="colonna">
   	<div class="card">
   	  <img src="immagini/azienda.jpg" alt="immagine azienda" />
@@ -120,7 +97,6 @@
 
 
 </div>
-
 
 <br><br>
 
@@ -152,11 +128,6 @@
 
 
 <br><br>
-
-
-
-
-
 
 <?php include('footer.php'); ?>
 

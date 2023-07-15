@@ -33,7 +33,7 @@
   <td><a href="./index.php#hr1">Promozioni</a></td>
     <td><a onclick="scrollup()">Ordina Online</a></td>
     <td><a href="./index.php#hr2">Prenotazione</a></td>
-    <td><a href="./index.php#contatti">Contatti</a></td>
+    <td><a href="./index.php#footer">Contatti</a></td>
 
 <?php /* Verifica se l'utente è loggato e nel caso mostra il bottone con il nome */
 echo '<td><a onclick="openmodal2()"><strong>'.' '. $_SESSION["username"] . '</strong></a></td>';
