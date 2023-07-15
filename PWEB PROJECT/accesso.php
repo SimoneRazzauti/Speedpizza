@@ -1,8 +1,10 @@
 <?php
 session_start();
+$target = $_GET['target'];
 
 if(isset($_SESSION['username'])){
   header('location: 404.php');
+  exit;
 }
 
 ?>
@@ -33,7 +35,7 @@ if(isset($_SESSION['username'])){
       <img src="immagini/pizza_avatar.png" alt="Avatar" class="avatar">
     </div>
     <p id="intestation"> Per accedere a questa sezione devi essere loggato. <strong>Esegui il login. Oppure registrati nella <a href="index.php">Home</a></strong></p>
-    <form method="post" name="login" action="./utility/login_accesso.php">
+    <form method="post" name="login" action="./utility/login_accesso.php?target=<?= urlencode($target)?>">
 	  <label><b>Username</b></label>
       <input type="text" placeholder="Inserisci Username" name="username" class="input" required>
 
@@ -46,7 +48,7 @@ if(isset($_SESSION['username'])){
       echo '<p id="errore_login">'.' '.$_SESSION['error'].'<p>';
       unset($_SESSION["error"]);
       }
-      ?>
+      ?>  
         
       <button type="submit"  class="button">Login</button>
     </form>

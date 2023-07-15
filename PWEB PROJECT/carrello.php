@@ -3,7 +3,8 @@ session_start();
 require('inc/db.php');
 
 if(!isset($_SESSION['username'])){
-	header('location: accesso1.php');
+	header('location: accesso.php?target=Carrello');
+	exit;
 }
 
 ?>
