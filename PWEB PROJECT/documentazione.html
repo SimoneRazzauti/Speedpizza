@@ -1,149 +1,199 @@
 <!DOCTYPE html>
 <html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link href="CSS/stiledocumentazione.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/styleMenu.css" type="text/css" />
+    <link rel="stylesheet" href="css/styleFooter.css" type="text/css" />
+    <link
+      rel="icon"
+      href="immagini/icon.png"
+      sizes="32x32"
+      type="image/x-icon"
+    />
+  </head>
 
-	<title> Tutorial </title>
-	<link href="CSS/stiledocumentazione.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="css/styleMenu.css" type="text/css">
-	<link rel="stylesheet" href="css/styleFooter.css" type="text/css">
-	<link rel="icon" href="immagini/icon.png" sizes="32x32" type="image/x-icon">
-</head>
+  <body>
+    <!-- MENU -->
+    <nav class="topnav">
+      <div class="menu-items">
+        <a href="index.php" onclick="scrollup();">Home</a>
+        <a href="index.php#hr1">Promozioni</a>
+        <a href="creation.php">Ordina Online</a>
+        <a href="index.php#image3">Prenotazione</a>
+        <a href="#footer">Contatti</a>
+        <a href="carrello.php">Il Mio Carrello</a>
+      </div>
+      <div class="dropdown">
+        <button onclick="toggleDropdown()" class="dropbtn">&#9776;</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="index.php" onclick="scrollup(); closeMenu()">Home</a>
+          <a href="index.php#hr1" onclick="closeMenu()">Promozioni</a>
+          <a href="creation.php" onclick="closeMenu()">Ordina Online</a>
+          <a href="index.php#image3" onclick="closeMenu()">Prenotazione</a>
+          <a href="#footer" onclick="closeMenu()">Contatti</a>
+          <a href="carrello.php" onclick="closeMenu()">Il Mio Carrello</a>
+        </div>
+      </div>
+    </nav>
 
-<body>
-	<!-- MENU -->
-	<nav class="topnav">
-		<div class="menu-items">
-			<a href="index.php" onclick="scrollup();">Home</a>
-			<a href="index.php#hr1">Promozioni</a>
-			<a href="creation.php">Ordina Online</a>
-			<a href="index.php#image3">Prenotazione</a>
-			<a href="#footer">Contatti</a>
-			<a href="carrello.php">Il Mio Carrello</a>
-		</div>
-		<div class="dropdown">
-			<button onclick="toggleDropdown()" class="dropbtn">&#9776;</button>
-			<div id="myDropdown" class="dropdown-content">
-				<a href="index.php" onclick="scrollup(); closeMenu()">Home</a>
-				<a href="index.php#hr1" onclick="closeMenu()">Promozioni</a>
-				<a href="creation.php" onclick="closeMenu()">Ordina Online</a>
-				<a href="index.php#image3" onclick="closeMenu()">Prenotazione</a>
-				<a href="#footer" onclick="closeMenu()">Contatti</a>
-				<a href="carrello.php" onclick="closeMenu()">Il Mio Carrello</a>
-			</div>
-		</div>
-	</nav>
+    <!-- BODY ELEMENTS -->
+    <h1>Benvenuto nel tutorial dedicato a Speedpizza</h1>
+    <section id="who">
+      <h2>&#8226; Chi siamo?</h2>
+      <p>
+        <strong>Speedpizza Inc.</strong> nasce nel 2023 come sito di ecommerce
+        legato alla vendita di pizza online.<br /><br /><strong
+          >Speedpizza Inc.</strong
+        >
+        offre una pizza molto personalizzabile a partire dall'impasto fino ad
+        arrivare ai numerosi ingredienti per soddisfare la maggior parte dei
+        clienti.
+      </p>
+    </section>
+    <section id="home">
+      <h2>&#8226; Il nostro sito, la Home</h2>
+      <img src="immagini/home_ss.png" alt="home" />
+      <p>
+        La Home &egrave; la pagina principale di
+        <strong>Speedpizza Inc.</strong> . &Egrave; possibile consultare le
+        promozioni/novit&agrave; del momento, prenotare un tavolo al nostro
+        ristorante autorizzato direttamente online e infine visualizzare i
+        contatti per qualsiasi informazione, il nostro staff sar&agrave;
+        disponibile a rispondere dopo pochi minuti. Dalla home &egrave;
+        possibile accedere a sezioni fondamentali del sito come il Men&ugrave;
+        di creazione o ricercare i nostri contatti. <br />
+        Se non siete ancora registrati potrete farlo dalla barra di ricerca in
+        alto e effettuare il login, molte sezioni del sito saranno accessibili
+        unicamente agli utenti che hanno effettuato il login.
+      </p>
+    </section>
+    <section id="creation">
+      <h2>&#8226; Il nostro sito, il Men&ugrave; di Creazione</h2>
+      <img src="immagini/creation_ss.png" alt="creation" />
+      <p>
+        Il Men&ugrave; &egrave; dove avvengono le ordinazioni online. &Egrave;
+        qui infatti, dove i nostri utenti registrati danno vita alla loro
+        fantasia. &Egrave; possibile personalizzare la pizza che ognuno
+        preferisce partendo dalla scelta dell'impasto e andando infine a
+        scegliere gli ingredienti e le bevande. &Egrave; possibile controllare
+        la pizza che si sta "personalizzando" dalla preview in basso a destra.
+        Quando la pizza &egrave; stata creata basta cliccare su
+        <strong> Procedi </strong> e ci verr&agrave; mostrato un resoconto con
+        la possibilit&agrave; di inserire la pizza nel carrello o di annullarla
+        per crearne una nuova.
+      </p>
+    </section>
+    <section id="carrello">
+      <h2>&#8226; Il nostro sito, il Carrello</h2>
+      <img src="immagini/carrello_ss.png" alt="carrello" />
+      <p>
+        Il Carrello &egrave; dove vengono inserite le pizze al termine della
+        creazione, &egrave; possibile controllare le pizze inserite ed
+        eventualmente rimuoverle.<br />
+        Non esiste un limite alle pizze che possono essere inserite nel
+        carrello, il totale aumenter&agrave; ogni volta che viene inserita una
+        pizza.<br />
+        Se si &egrave; finito di ordinare basta cliccare su
+        <strong> Check Out </strong> per procedere al pagamento. Le pizze
+        saranno inviate all'indirizzo specificato al momento della
+        registrazione.
+      </p>
+    </section>
+    <section id="user">
+      <h2>&#8226; Il nostro sito, il Men&ugrave; utente</h2>
+      <img src="immagini/user_ss.png" alt="user" />
+      <p>
+        Effettuata la registrazione e successivamente il login, comparir&agrave;
+        il vostro username all'interno della barra di navigazione in cima alla
+        pagina.<br />
+        Se ci cliccate vi apparir&agrave; una finestra utente con tre
+        pulsanti:<br /><br />
+        <strong>Le mie informazioni:</strong> vi permette di consultare le
+        informazioni inserite da voi al momento della registrazione e
+        attualemente in uso <br />
+        <strong>Storico Ordini:</strong> vi permette di consultare lo storico
+        dei vostri ordini precendenti, se il pagamento &egrave; avvenuto con
+        successo <br />
+        <strong>Logout:</strong> vi permette di scollegare il vostro account dal
+        sito per poter effettuare un nuovo login o una nuova registrazione
+      </p>
+    </section>
+    <section id="reservation">
+      <h2>&#8226; Il nostro sito, la prenotazione</h2>
+      <img src="immagini/reservation_ss.png" alt="reservation" />
+      <p>
+        Nella Home &egrave; possibile prenotare un tavolo direttamente online,
+        basta inserire il giorno, il nome col quale intendete prenotare il
+        tavolo ed il numero di persone. <br />Premendo "conferma" verrà
+        riservato un tavolo al ristorante a vostro nome.
+      </p>
+    </section>
 
-	<!-- BODY ELEMENTS -->
-	<h1> Benvenuto nel tutorial dedicato a Speedpizza </h1>
-	<section id="who">
-		<h2> &#8226; Chi siamo? </h2>
-		<p> <strong>Speedpizza Inc.</strong> nasce nel 2023 come sito di ecommerce legato alla vendita di pizza
-			online.<br><br><strong>Speedpizza Inc.</strong> offre una pizza molto personalizzabile a partire
-			dall'impasto
-			fino ad arrivare ai numerosi ingredienti per soddisfare la maggior parte dei clienti. </p>
-	</section>
-	<section id="home">
-		<h2> &#8226; Il nostro sito, la Home </h2>
-		<img src="immagini/home_ss.png" alt="home">
-		<p> La Home &egrave; la pagina principale di <strong>Speedpizza Inc.</strong> . &Egrave; possibile consultare le
-			promozioni/novit&agrave; del momento, prenotare un tavolo al nostro ristorante autorizzato direttamente
-			online e infine visualizzare i contatti per qualsiasi informazione, il nostro staff sar&agrave; disponibile
-			a rispondere dopo pochi minuti. Dalla home &egrave; possibile accedere a sezioni fondamentali del sito come
-			il Men&ugrave; di creazione o ricercare i nostri contatti. <br> Se non siete ancora registrati potrete farlo
-			dalla barra di ricerca in alto e effettuare il login, molte sezioni del sito saranno accessibili unicamente
-			agli utenti che hanno effettuato il login. </p>
-	</section>
-	<section id="creation">
-		<h2> &#8226; Il nostro sito, il Men&ugrave; di Creazione </h2>
-		<img src="immagini/creation_ss.png" alt="creation">
-		<p> Il Men&ugrave; &egrave; dove avvengono le ordinazioni online. &Egrave; qui infatti, dove i nostri utenti
-			registrati danno vita alla loro fantasia. &Egrave; possibile personalizzare la pizza che ognuno preferisce
-			partendo dalla scelta dell'impasto e andando infine a scegliere gli ingredienti e le bevande. &Egrave;
-			possibile controllare la pizza che si sta "personalizzando" dalla preview in basso a destra. Quando la pizza
-			&egrave; stata creata basta cliccare su <strong> Procedi </strong> e ci verr&agrave; mostrato un resoconto
-			con la possibilit&agrave; di inserire la pizza nel carrello o di annullarla per crearne una nuova. </p>
-	</section>
-	<section id="carrello">
-		<h2> &#8226; Il nostro sito, il Carrello </h2>
-		<img src="immagini/carrello_ss.png" alt="carrello">
-		<p> Il Carrello &egrave; dove vengono inserite le pizze al termine della creazione, &egrave; possibile
-			controllare le pizze inserite ed eventualmente rimuoverle.<br> Non esiste un limite alle pizze che possono
-			essere inserite nel carrello, il totale aumenter&agrave; ogni volta che viene inserita una pizza.<br> Se si
-			&egrave; finito di ordinare basta cliccare su <strong> Check Out </strong> per procedere al pagamento. Le
-			pizze saranno inviate all'indirizzo specificato al momento della registrazione. </p>
-	</section>
-	<section id="user">
-		<h2> &#8226; Il nostro sito, il Men&ugrave; utente </h2>
-		<img src="immagini/user_ss.png" alt="user">
-		<p> Effettuata la registrazione e successivamente il login, comparir&agrave; il vostro username all'interno
-			della barra di navigazione in cima alla pagina.<br>
-			Se ci cliccate vi apparir&agrave; una finestra utente con tre pulsanti:<br><br>
-			<strong>Le mie informazioni:</strong> vi permette di consultare le informazioni inserite da voi al momento
-			della registrazione e attualemente in uso <br>
-			<strong>Storico Ordini:</strong> vi permette di consultare lo storico dei vostri ordini precendenti, se il
-			pagamento &egrave; avvenuto con successo <br>
-			<strong>Logout:</strong> vi permette di scollegare il vostro account dal sito per poter effettuare un nuovo
-			login o una nuova registrazione
-		</p>
-	</section>
-	<section id="reservation">
-		<h2> &#8226; Il nostro sito, la prenotazione </h2>
-		<img src="immagini/reservation_ss.png" alt="reservation">
-		<p> Nella Home &egrave; possibile prenotare un tavolo direttamente online, basta inserire il giorno, il nome col
-			quale intendete prenotare il tavolo ed il numero di persone.
-			<br>Premendo "conferma" verrà riservato un tavolo al ristorante a vostro nome.
-		</p>
-	</section>
-
-	<!-- FOOTER -->
-	<div class="contacts" id="footer">
-		<div class="div-top">
-			<h2> Vieni a trovarci! </h2>
-		</div>
-		<div class="div-content">
-			<div class="div-left">
-				<div class="contact-info">
-					<p> Corso Giuseppe Mazzini, 32 <br>
-						57126 Livorno LI <br>
-						TEL: 0586 XXXXXX <br><br>
-						Tutti i giorni: <br>
-						dalle 12:30 alle 15:30 <br>
-						dalle 18:30 alle 00:30 <br> <br>
-						Email: <a href="mailto:speedpizza@inc.corporation.it">speedpizza@inc.corporation.it</a></p>
-				</div>
-				<div class="contact-social">
-					<div class="social-links">
-						<a href="#" id="facebook"></a>
-						<a href="#" id="instagram"></a>
-						<a href="#" id="google"></a>
-					</div>
-				</div>
-			</div>
-			<div class="div-center">
-				<img src="immagini/arrow-up.png" alt="freccia" onclick="scrollup()" class="arrow-icon">
-			</div>
-			<div class="div-right">
-				<div id="map-container">
-					<a href="https://www.google.com/maps/place/Corso+Giuseppe+Mazzini,+32,+57126+Livorno+LI/@43.5439481,10.3115133,19z/data=!4m6!3m5!1s0x12d5e9709e3dceab:0x1071aa61ab7235ab!8m2!3d43.5442401!4d10.3121772!16s%2Fg%2F11c29qlpqg?entry=ttu"
-						target="_blank">
-						<img src="immagini/map.png" alt="Mappa">
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="div-bottom">
-			<p>&copy; <span id="current-year"></span> by Speedpizza Inc. All Rights Reserved.</p>
-		</div>
-	</div>
-	<script src="js/mainscript.js"> </script>
-	<script>
-		var currentYear = new Date().getFullYear();
-		document.getElementById("current-year").textContent = currentYear;
-	</script>
-</body>
-
+    <!-- FOOTER -->
+    <div class="contacts" id="footer">
+      <div class="div-top">
+        <h2>Vieni a trovarci!</h2>
+      </div>
+      <div class="div-content">
+        <div class="div-left">
+          <div class="contact-info">
+            <p>
+              Corso Giuseppe Mazzini, 32 <br />
+              57126 Livorno LI <br />
+              TEL: 0586 XXXXXX <br /><br />
+              Tutti i giorni: <br />
+              dalle 12:30 alle 15:30 <br />
+              dalle 18:30 alle 00:30 <br />
+              <br />
+              Email:
+              <a href="mailto:speedpizza@inc.corporation.it"
+                >speedpizza@inc.corporation.it</a
+              >
+            </p>
+          </div>
+          <div class="contact-social">
+            <div class="social-links">
+              <a href="#" id="facebook"></a>
+              <a href="#" id="instagram"></a>
+              <a href="#" id="google"></a>
+            </div>
+          </div>
+        </div>
+        <div class="div-center">
+          <img
+            src="immagini/arrow-up.png"
+            alt="freccia"
+            onclick="scrollup()"
+            class="arrow-icon"
+          />
+        </div>
+        <div class="div-right">
+          <div id="map-container">
+            <a
+              href="https://www.google.com/maps/place/Corso+Giuseppe+Mazzini,+32,+57126+Livorno+LI/@43.5439481,10.3115133,19z/data=!4m6!3m5!1s0x12d5e9709e3dceab:0x1071aa61ab7235ab!8m2!3d43.5442401!4d10.3121772!16s%2Fg%2F11c29qlpqg?entry=ttu"
+              target="_blank"
+            >
+              <img src="immagini/map.png" alt="Mappa" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="div-bottom">
+        <p>
+          &copy; <span id="current-year"></span> by Speedpizza Inc. All Rights
+          Reserved.
+        </p>
+      </div>
+    </div>
+    <script src="js/mainscript.js"></script>
+    <script>
+      var currentYear = new Date().getFullYear();
+      document.getElementById("current-year").textContent = currentYear;
+    </script>
+  </body>
 </html>

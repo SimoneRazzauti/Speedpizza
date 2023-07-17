@@ -21,16 +21,16 @@ if (isset($_COOKIE["NOME"])) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Storico Utente</title>
-		<link rel="stylesheet" href="CSS/stilecarrello.css" type="text/css">
-		<link rel="stylesheet" href="css/styleMenu.css" type="text/css">
-    	<link rel="stylesheet" href="css/styleModalUser.css" type="text/css">
-    	<link rel="icon" href="immagini/icon.png" sizes="32x32" type="image/x-icon">
+	<link rel="stylesheet" href="CSS/stilecarrello.css" type="text/css">
+	<link rel="stylesheet" href="css/styleMenu.css" type="text/css">
+	<link rel="stylesheet" href="css/styleModalUser.css" type="text/css">
+	<link rel="icon" href="immagini/icon.png" sizes="32x32" type="image/x-icon">
 </head>
 
 <body>
 	<!-- MENU -->
-	<?=template_menu();?>
-	
+	<?= template_menu(); ?>
+
 	<!-- CORPO CENTRALE -->
 	<div id="center_div">
 		<h1> Storico Ordini </h1>
@@ -76,22 +76,22 @@ if (isset($_COOKIE["NOME"])) {
 
 	</div>
 
-<!-- MODAL UTENTE -->
-<div id="id03" class="modal">
-  		<div class="modal-content animate">
-    		<div class="imgcontainer">
-      			<span onclick="closemodal2()" class="close" title="Close Modal">&times;</span> <!-- Span chiusura modal -->
-      			<img src="immagini/user.png" alt="Avatar" class="avatar">
-    		</div>
+	<!-- MODAL UTENTE -->
+	<div id="id03" class="modal">
+		<div class="modal-content animate">
+			<div class="imgcontainer">
+				<span onclick="closemodal2()" class="close" title="Close Modal">&times;</span> <!-- Span chiusura modal -->
+				<img src="immagini/user.png" alt="Avatar" class="avatar">
+			</div>
 
-    		<div class="container-modal">
-      			<p><strong><?php echo $_COOKIE["NOME"]; ?></strong></p>
-            	<button type="button" onclick="location.href = 'info.php';" class="modalbutton">Le mie informazioni</button>
-    			<button type="button" onclick="location.href = './utility/logout.php';" class="modalbutton">Logout</button>
-    		</div>
+			<div class="container-modal">
+				<p><strong><?php echo $_COOKIE["NOME"]; ?></strong></p>
+				<button type="button" onclick="location.href = 'info.php';" class="modalbutton">Le mie informazioni</button>
+				<button type="button" onclick="location.href = './utility/logout.php';" class="modalbutton">Logout</button>
+			</div>
 		</div>
-</div>
-<!-- FINE MODAL UTENTE -->
+	</div>
+	<!-- FINE MODAL UTENTE -->
 
 	<script src="js/mainscript.js"> </script>
 </body>

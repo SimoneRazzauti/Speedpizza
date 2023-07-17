@@ -19,7 +19,7 @@ if (!isset($_SESSION["username"]) && !isset($_COOKIE["NOME"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Creazione Pizza </title>
-  <link  rel="stylesheet" href="./CSS/stilecreation.css" type="text/css">
+  <link rel="stylesheet" href="./CSS/stilecreation.css" type="text/css">
   <link rel="stylesheet" href="css/styleModalUser.css" type="text/css">
   <link rel="stylesheet" href="css/styleMenu.css" type="text/css">
   <link rel="icon" href="immagini/icon.png" sizes="32x32" type="image/x-icon">

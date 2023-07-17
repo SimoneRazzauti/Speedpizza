@@ -150,25 +150,25 @@ if (isset($_COOKIE["NOME"])) {
 		?>
 	</div>
 
-<!-- MODAL UTENTE -->
-<div id="id03" class="modal">
-  		<div class="modal-content animate">
-    		<div class="imgcontainer">
-      		<span onclick="closemodal2()" class="close" title="Close Modal">&times;</span> <!-- Span chiusura modal -->
-      		<img src="immagini/user.png" alt="Avatar" class="avatar">
-    		</div>
+	<!-- MODAL UTENTE -->
+	<div id="id03" class="modal">
+		<div class="modal-content animate">
+			<div class="imgcontainer">
+				<span onclick="closemodal2()" class="close" title="Close Modal">&times;</span> <!-- Span chiusura modal -->
+				<img src="immagini/user.png" alt="Avatar" class="avatar">
+			</div>
 
-    		<div class="container-modal">
-      			<p><strong><?php echo $_COOKIE["NOME"]; ?></strong></p>
-            <button type="button" onclick="location.href = 'info.php';" class="modalbutton">Le mie informazioni</button>
-      			<button type="button" onclick="location.href = 'storico.php';" class="modalbutton">Storico Ordini</button>
-     			 <button type="button" onclick="location.href = './utility/logout.php';" class="modalbutton">Logout</button>
-    		</div>
-  		</div>
+			<div class="container-modal">
+				<p><strong><?php echo $_COOKIE["NOME"]; ?></strong></p>
+				<button type="button" onclick="location.href = 'info.php';" class="modalbutton">Le mie informazioni</button>
+				<button type="button" onclick="location.href = 'storico.php';" class="modalbutton">Storico Ordini</button>
+				<button type="button" onclick="location.href = './utility/logout.php';" class="modalbutton">Logout</button>
+			</div>
 		</div>
-<!-- FINE MODAL UTENTE -->
+	</div>
+	<!-- FINE MODAL UTENTE -->
 
-<script src="js/mainscript.js"> </script>
+	<script src="js/mainscript.js"> </script>
 
 </body>
 
