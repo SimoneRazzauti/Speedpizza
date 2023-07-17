@@ -41,6 +41,7 @@ body {
   }
   
   .form-row input[type="text"] {
+    box-sizing: border-box;
     flex: 1;
     margin-left: 20px;
     padding: 10px;

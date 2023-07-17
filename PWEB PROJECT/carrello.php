@@ -1,37 +1,35 @@
 <?php
 session_start();
 require('inc/db.php');
+include('utility/function.php'); # funzioni di utilità
 
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
 	header('location: accesso.php?target=Carrello');
 	exit;
+}
+
+if(isset($_COOKIE["NOME"])){
+	$_SESSION["username"] = $_COOKIE["NOME"];
 }
 
 ?>
 <!DOCTYPE HTML>
 <html lang="it">
-	<head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title> Carrello </title>
 	<link href="CSS/stilecarrello.css" rel="stylesheet" type="text/css">
-	<link rel="icon" href="immagini/icon.png" sizes="32x32">
-	</head>
+	<link rel="stylesheet" href="css/styleMenu.css" type="text/css">
+	<link rel="icon" href="immagini/icon.png" sizes="32x32" type="image/x-icon">
+</head>
 <body>
-	<nav class="topnav">
-	 <table>
-  		<tr>
-    	<td><a href="./index.php">Home</a></td>
-  		<td><a href="./index.php#hr1">Promozioni</a></td>
-    	<td><a href="creation.php">Ordina Online</a></td>
-    	<td><a href="./index.php#hr2">Prenotazione</a></td>
-    	<td><a href="./index.php#contatti">Contatti</a></td>
+	<!-- MENU -->
+	<?=template_menu();?>
+	
 
-		<?php /* Verifica se l'utente è loggato e nel caso mostra il bottone con il nome */
-		echo '<td><a onclick="openmodal2()"><strong>'.' '. $_SESSION["username"] . '</strong></a></td>';
-		?>
-
-  		</tr>
-	 </table>
-	</nav>
 	<div id="center_div">
 		<h1> Pizze nel tuo Carrello </h1>
 		<hr>
@@ -173,7 +171,7 @@ if(!isset($_SESSION['username'])){
     </div>
 
     <div class="container-modal">
-      <p><strong><?php echo $_SESSION["username"]; ?></strong></p>
+      <p><strong><?php echo $_COOKIE["NOME"]; ?></strong></p>
 		<br>
 		<br>
 
@@ -187,15 +185,6 @@ if(!isset($_SESSION['username'])){
   </div>
  </div>
 
-<script> 
-	var modal3= document.getElementById('id03')
-	function openmodal2(){
-		modal3.style.display = "block";
-	}
-
-	function closemodal2(){
-		modal3.style.display = "none";
-	}
-</script>
+<script src="js/mainscript.js"> </script>
 </body>
 </html>

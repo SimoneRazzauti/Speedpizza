@@ -23,7 +23,15 @@ if (isset($_POST['username'])){
    $rows = mysqli_num_rows($result);
  
    if ($rows == 1) {
+
+      //CREO VARIABILE DI SESSIONE
       $_SESSION['username'] = $username;
+
+      // CREO UN COOKIE DI UNA SETTIMANA
+      $expiry_time = time() + 3600*24*7; 
+      $cookie_name = "NOME";
+      $cookie_value = $username; 
+      setcookie($cookie_name, $cookie_value, $expiry_time, "/");
       if ($target === 'Creation') {
           header("Location: ../creation.php");
           exit;

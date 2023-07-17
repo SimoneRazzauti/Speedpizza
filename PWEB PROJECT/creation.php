@@ -1,10 +1,11 @@
 <?php
- session_start();
+session_start();
+include('utility/function.php'); # funzioni di utilità
 
-  if(!isset($_SESSION["username"])){
+if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
     header('location: accesso.php?target=Creation');
     exit;
-  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -33,7 +34,7 @@
     <td><a href="./index.php">Home</a></td>
   <td><a href="./index.php#hr1">Promozioni</a></td>
     <td><a onclick="scrollup()">Ordina Online</a></td>
-    <td><a href="./index.php#hr2">Prenotazione</a></td>
+    <td><a href="./index.php#image3">Prenotazione</a></td>
     <td><a href="./index.php#footer">Contatti</a></td>
 
 <?php /* Verifica se l'utente è loggato e nel caso mostra il bottone con il nome */
@@ -44,7 +45,7 @@ echo '<td><a onclick="openmodal2()"><strong>'.' '. $_SESSION["username"] . '</st
 </table>
 </nav>
 <div id="intestazione">
-	<h1> FASTPIZZA </h1>
+	<h1> Speedpizza </h1>
 </div>
 <form id="form1" action="test.php" method="post" name="form1">
 <section id="selezioneImpasti">

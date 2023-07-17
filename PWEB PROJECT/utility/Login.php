@@ -1,47 +1,54 @@
 <?php
+session_start();
 require('../inc/db.php');
 
-session_start();
-
-// If form submitted, insert values into the database.
 
 if (isset($_POST['username'])){
-
-        // removes backslashes
-
-  $username = stripslashes($_REQUEST['username']);
-
-
-        //escapes special characters in a string
-
-
-  $username = mysqli_real_escape_string($con,$username);
-
-  $password = stripslashes($_REQUEST['password']);
-
-  $password = mysqli_real_escape_string($con,$password);
-
-
-  //Checking is user existing in the database or not
-
   
-   $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
+  // rimuovi gli spazzi
+  
+  $username = stripslashes($_REQUEST['username']);
+  
+  
+  // rimuovi tutti i caratteri speciali
+  
+  
+  $username = mysqli_real_escape_string($con,$username);
+  
+  $password = stripslashes($_REQUEST['password']);
+  
+  $password = mysqli_real_escape_string($con,$password);
+  
+  
+  
+  //CHECK NEL DB
+  
+  $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
+  
+  $result = mysqli_query($con,$query) or die(mysql_error());
+  
+  $rows = mysqli_num_rows($result);
+  
+  // SE C'E' CORRISPONDENZA ACCEDO
+  
+  if($rows==1){
 
-   $result = mysqli_query($con,$query) or die(mysql_error());
-   
-   $rows = mysqli_num_rows($result);
- 
- 
- 
-   if($rows==1){
-   $_SESSION['username'] = $username;
-
-
-
-header("location: ../info.php");
+      //CREO VARIABILE DI SESSIONE
+      $_SESSION['username'] = $username;
+      
+      // CREO UN COOKIE DI UNA SETTIMANA
+      $expiry_time = time() + 3600*24*7; 
+      $cookie_name = "NOME";
+      $cookie_value = $username; 
+      setcookie($cookie_name, $cookie_value, $expiry_time, "/");
+      
+      //REDIRECT
+      header("location: ../info.php");
+      exit;
          }else{
       $_SESSION['error'] = "Username o Password errati. Riprova.";
-      header("location: ../index.php");
+      header("location: ../index.php?error=1");
+      exit;
   }
 }
 

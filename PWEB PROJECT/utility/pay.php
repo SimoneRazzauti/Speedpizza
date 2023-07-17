@@ -99,6 +99,7 @@
 
     /* Reindirizzamento a success.php */
 
-    header('location: ../successo.php ')
+    header('location: ../successo.php ');
+    exit;
 
     ?>

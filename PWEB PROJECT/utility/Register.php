@@ -204,12 +204,23 @@ session_start();
     $result = mysqli_query($con,$query);
 
 
-    $_SESSION['username'] = $username;
+    // CREO la variabile di sessione username
+    $_SESSION['username'] = $username; 
+    
+    // CREO IL COOKIE DI UNA SETTIMANA
+    $expiry_time = time() + 3600*24*7; 
+    $cookie_name = "NOME";
+    $cookie_value = $username; 
+    setcookie($cookie_name, $cookie_value, $expiry_time, "/");
+
     $messaggio_benvenuto = "Benvenuto! Grazie per esserti registrato.";
     header('Location: ../info.php?welcome=' . urlencode($messaggio_benvenuto));
     exit;
 
         
-    } else header('location: ../index.php')
+    } else{
+        header('location: ../index.php?error=1');
+        exit;
+    } 
 
 ?>

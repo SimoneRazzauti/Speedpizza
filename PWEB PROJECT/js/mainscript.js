@@ -25,9 +25,13 @@ function closeMenu() {
 	if (month < 10) month = "0" + month;
 	if (day < 10) day = "0" + day;
 
-	var today = year + "-" + month + "-" + day; 
+	var today = year + "-" + month + "-" + day;
+	var elemento =  document.getElementById("theDate");
+	if(elemento){
     document.getElementById("theDate").defaultValue = today;
     document.getElementById("theDate").min = today;
+	}
+	
 /* setta l'ora corrente nella time form */
 
     var time= new Date();
@@ -36,8 +40,10 @@ function closeMenu() {
     var minutes = time.getMinutes();
 
     var time = hours + ":" + minutes;
+	var elemento =  document.getElementById("theTime");
+	if(elemento){
     document.getElementById("theTime").defaultValue = time;
-
+	}
 
 /* funzione scroll verso l'alto */
 
@@ -70,10 +76,12 @@ function closeMenu() {
 
 	var element = document.getElementById('firstname');
 
+	if(element){
 	element.addEventListener('animationEnd', function(){ 
    	 this.style.animationName = '';
 	}, false);
-
+	}
+// valida il nome che deve essere maggiore di 3 caratteri e minore di 10	
 	function validateForm(){
 	var _name = document.forms["myForm"]["firstname"].value; /* nome inserito */
 	var withoutSpace = _name.replace(/ /g,""); /* rimuovo gli spazi bianchi */
@@ -98,9 +106,9 @@ function closeMenu() {
 // MODAL SCRIPT //
 
 // Get the modal
-var modal = document.getElementById('id01');
-var modal1 = document.getElementById('id02');
-var modal2 = document.getElementById('id03');
+var modal = document.getElementById('id01'); // login
+var modal1 = document.getElementById('id02'); // registrazione
+var modal2 = document.getElementById('id03'); // utente
 var modal3 = document.getElementById('id04');
 
 function openmodal(){
@@ -111,13 +119,6 @@ function closemodal(){
 	modal.style.display='none';
 }
 
-// Chiudi modal quando clicchi al di fuori del modal
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
 function openmodal1(){
 	modal1.style.display='block';
 }
@@ -125,6 +126,7 @@ function openmodal1(){
 function closemodal1(){
 	modal1.style.display='none';
 }
+
 
 function openmodal2(){
 	modal2.style.display='block';
@@ -134,13 +136,18 @@ function closemodal2(){
 	modal2.style.display='none';
 }
 
-// Chiudi modal1 quando clicchi al di fuori del modal
+// QUANDO SI CLICCA IN UNA ZONA CHE NON E' IL MODAL SI CHIUDE IL MODAL 
 window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
     if (event.target == modal1) {
         modal1.style.display = "none";
     }
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
 }
-
 
 	function validateEmail(email) { /* Funzione per validare email */
   	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -166,6 +173,7 @@ window.onclick = function(event) {
 
 	var element_email = document.getElementById('modal1_email');
 
+	if(element_email){
 	element_email.addEventListener('animationEnd', function(){ 
    	 this.style.animationName = '';
 	}, false);
@@ -189,7 +197,7 @@ window.onclick = function(event) {
 	document.getElementById('modal1_cap').addEventListener('animationEnd', function(){ 
    	 this.style.animationName = '';
 	}, false);
-
+}
 	function validateFormRegister(){
 
 	var errore_ = true;

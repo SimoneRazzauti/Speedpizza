@@ -2,7 +2,7 @@
 
 /* connessione al db */
 
-$con = mysqli_connect("localhost","root","","fastpizza");
+$con = mysqli_connect("localhost","root","","speedpizza");
 
 // Verifica connessione
 

@@ -3,10 +3,15 @@
 	require('inc/db.php');
 	include('utility/function.php'); # funzioni di utilità
 
-	if(!isset($_SESSION['username'])){
-	header('location: 404.php');
+	if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
+	  header('location: 404.php');
+    exit;
 	}
 	
+  if(isset($_COOKIE["NOME"])){
+    $_SESSION["username"] = $_COOKIE["NOME"];
+  }
+
 	$query = "SELECT * FROM users WHERE username='".$_SESSION['username']."'";
    	$result=mysqli_query($con,$query);
    	$row = mysqli_fetch_assoc($result);
@@ -19,6 +24,7 @@
    	$date = $row['trn_date'];
 
 ?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -91,48 +97,26 @@
 <h1 id="welcome-message" class="hidden">Benvenuto! Grazie per esserti registrato.</h1>
 
 <!-- MODAL UTENTE -->
+<div id="id03" class="modal">
+  		<div class="modal-content animate">
+    		<div class="imgcontainer">
+      		<span onclick="closemodal2()" class="close" title="Close Modal">&times;</span> <!-- Span chiusura modal -->
+      		<img src="immagini/user.png" alt="Avatar" class="avatar">
+    		</div>
 
-	<div id="id03" class="modal">
-	<div class="modal-content animate">
-		<div class="imgcontainer">
-		<span onclick="closemodal2()" class="close" title="Close Modal">&times;</span> <!-- Span chiusura modal -->
-		<img src="immagini/user.png" alt="Avatar" class="avatar">
+    		<div class="container-modal">
+      			<p><strong><?php echo $_COOKIE["NOME"]; ?></strong></p>
+            <button type="button" onclick="location.href = 'info.php';" class="modalbutton">Le mie informazioni</button>
+      			<button type="button" onclick="location.href = 'storico.php';" class="modalbutton">Storico Ordini</button>
+     			 <button type="button" onclick="location.href = './utility/logout.php';" class="modalbutton">Logout</button>
+    		</div>
+  		</div>
 		</div>
+<!-- FINE MODAL UTENTE -->
 
-		<div class="container-modal">
-			<p><strong><?php echo $_SESSION["username"]; ?></strong></p>
-			<button type="button" onclick="location.href = 'storico.php';" class="modalbutton">Storico Ordini</button>
-			<button type="button" onclick="location.href = './utility/logout.php';" class="modalbutton">Logout</button>
-		</div>
-	</div>
-	</div>
-
+<script src="js/mainscript.js"> </script>
 <script> 
-	var modal3= document.getElementById('id03')
-	function openmodal2(){
-		modal3.style.display = "block";
-	}
-
-	function closemodal2(){
-		modal3.style.display = "none";
-	}
-
-	// Menu in modalità mobile
-function toggleDropdown() {
-  var dropdown = document.getElementById("myDropdown");
-  if (dropdown.style.display === "block") {
-    dropdown.style.display = "none";
-  } else {
-    dropdown.style.display = "block";
-  }
-}
-
-// Chiusura menu in modalità mobile
-function closeMenu() {
-  var dropdown = document.getElementById("myDropdown");
-  dropdown.style.display = "none";
-}
-
+// EVENTO DEL MESSAGGIO DI BENVENUTO
 document.addEventListener("DOMContentLoaded", function() {
   var urlParams = new URLSearchParams(window.location.search);
   var welcomeMessage = urlParams.get('welcome');

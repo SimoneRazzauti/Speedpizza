@@ -2,13 +2,29 @@
 	session_start();
 	require('inc/db.php');
 
-	 if(!isset($_SESSION["username"])){
-  	header('location: 404.php');
-  	}
+	if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
+		header('location: 404.php');
+	  exit;
+	  }
+	  
+	if(isset($_COOKIE["NOME"])){
+	  $_SESSION["username"] = $_COOKIE["NOME"];
+	}
 
-	$_SESSION['impasto'] = $_POST['impasto'];
-	$_SESSION['tomato'] = $_POST['tomato'];
-	$_SESSION['cheese'] = $_POST['cheese'];
+	if (isset($_POST["impasto"])){
+		$_SESSION['impasto'] = $_POST['impasto'];
+	}
+	else $_SESSION['impasto'] =  "Classico"; // default
+
+	if (isset($_POST["cheese"])){
+		$_SESSION['cheese'] = $_POST['cheese'];
+	}
+	else $_SESSION['cheese'] =  "Nessuno";
+
+	if (isset($_POST["tomato"])){
+		$_SESSION['tomato'] = $_POST['tomato'];
+	}
+	else $_SESSION['tomato'] = "Nessuno";
 
 	if (isset($_POST["capperi"])){
 		$_SESSION['capperi'] = $_POST['capperi'];
@@ -122,9 +138,12 @@
 <!DOCTYPE html>
 <html lang="it">
 	<head>
+	<meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title> Resoconto Ordine </title>
 		<link href="./CSS/stiletest.css" rel="stylesheet" type="text/css">
-		<link rel="icon" href="immagini/icon.png" sizes="32x32">
+		<link rel="icon" href="immagini/icon.png" sizes="32x32" type="image/x-icon">
 	</head>
 <body>
 <div id="resoconto">
@@ -133,16 +152,16 @@
 <hr>
 <p><img src="immagini/pizza_icon.png" class="icon" alt="icon"><strong> Tipologia Impasto:</strong> 
 	<?php 
-	echo $_POST["impasto"]; 
-	if($_POST['impasto'] == 'Classico' || $_POST['impasto'] == 'Senza Glutine' ){
+	echo $_SESSION["impasto"]; 
+	if($_SESSION['impasto'] == 'Classico' || $_SESSION['impasto'] == 'Senza Glutine' ){
 	$totale = 3;
 	echo ' (+3.00&euro;)';
 	}
-	if($_POST['impasto'] == 'Integrale'){
+	if($_SESSION['impasto'] == 'Integrale'){
 	$totale = 4;
 	echo ' (+4.00&euro;)';
 	}
-	if($_POST['impasto'] == 'Curcuma' || $_POST['impasto'] == 'Grano Saraceno'){
+	if($_SESSION['impasto'] == 'Curcuma' || $_SESSION['impasto'] == 'Grano Saraceno'){
 	$totale = 3.5;
 	echo ' (+3.50&euro;)';
 	}
@@ -150,8 +169,8 @@
 </p>
 <p><img src="immagini/sauce_icon.png" class="icon" alt="icon"><strong> Tipologia Salsa:</strong> 
 	<?php
-	echo $_POST["tomato"]; 
-	if($_POST['tomato'] == 'Pomodoro'){
+	echo $_SESSION["tomato"]; 
+	if($_SESSION['tomato'] == 'Pomodoro'){
 	$totale += 1;
 	echo ' (+1.00&euro;)';
 	}
@@ -159,16 +178,16 @@
 </p>
 <p><img src="immagini/cheese_icon.png" class="icon" alt="icon"><strong> Tipologia Formaggio:</strong>
 	<?php 
-	echo $_POST["cheese"]; 
-	if($_POST['cheese'] == 'Mozzarella'){
+	echo $_SESSION["cheese"]; 
+	if($_SESSION['cheese'] == 'Mozzarella'){
 	$totale += 2;
 	echo ' (+2.00&euro;)';
 	}
-	if($_POST['cheese'] == 'Bufala'){
+	if($_SESSION['cheese'] == 'Bufala'){
 	$totale += 3;
 	echo ' (+3.00&euro;)';
 	}
-	if($_POST['cheese'] == 'Mozzarella (- grassi)'){
+	if($_SESSION['cheese'] == 'Mozzarella (- grassi)'){
 	$totale += 2.5;
 	echo ' (+2.50&euro;)';
 	}
@@ -219,13 +238,13 @@
 </div>
 <aside id="preview">
 	<p> Preview: </p>
-	<?php if ($_POST["impasto"] == 'Classico'){ echo '<img src="./Creation/impasto_classico.png" alt="preview" id="iclassico" style="display:block">';} ?>
-	<?php if ($_POST["impasto"] == 'Integrale'){ echo '<img src="./Creation/impasto_integrale.png" alt="preview" id="iintegrale" style="display:block">';} ?>
-	<?php if ($_POST["impasto"] == 'Curcuma'){ echo '<img src="./Creation/impasto_curcuma.png" alt="preview" id="icurcuma" style="display:block">';} ?>
-	<?php if ($_POST["impasto"] == 'Senza Glutine'){ echo '<img src="./Creation/impasto_classico.png" alt="preview" style="display:block">';} ?>
-	<?php if ($_POST["impasto"] == 'Grano Saraceno'){ echo '<img src="./Creation/impasto_grano.png" alt="preview" id="igrano" style="display:block">';} ?>
-	<?php if ($_POST["tomato"] == 'Pomodoro'){ echo '<img src="./Creation/sugo_pomodoro.png" alt="preview" id="tpomodoro" style="display:block">';} ?>
-	<?php if ($_POST["cheese"] == 'Mozzarella' || $_POST["cheese"] == 'Mozzarella (- grassi)' || $_POST["cheese"] == 'Bufala'){ 
+	<?php if ($_SESSION["impasto"] == 'Classico'){ echo '<img src="./Creation/impasto_classico.png" alt="preview" id="iclassico" style="display:block">';} ?>
+	<?php if ($_SESSION["impasto"] == 'Integrale'){ echo '<img src="./Creation/impasto_integrale.png" alt="preview" id="iintegrale" style="display:block">';} ?>
+	<?php if ($_SESSION["impasto"] == 'Curcuma'){ echo '<img src="./Creation/impasto_curcuma.png" alt="preview" id="icurcuma" style="display:block">';} ?>
+	<?php if ($_SESSION["impasto"] == 'Senza Glutine'){ echo '<img src="./Creation/impasto_classico.png" alt="preview" style="display:block">';} ?>
+	<?php if ($_SESSION["impasto"] == 'Grano Saraceno'){ echo '<img src="./Creation/impasto_grano.png" alt="preview" id="igrano" style="display:block">';} ?>
+	<?php if ($_SESSION["tomato"] == 'Pomodoro'){ echo '<img src="./Creation/sugo_pomodoro.png" alt="preview" id="tpomodoro" style="display:block">';} ?>
+	<?php if ($_SESSION["cheese"] == 'Mozzarella' || $_SESSION["cheese"] == 'Mozzarella (- grassi)' || $_SESSION["cheese"] == 'Bufala'){ 
 		echo '<img src="./Creation/mozzarella.png" alt="preview" id="cmozzarella" style="display:block">';} ?>
 	<?php if (isset($_POST["capperi"])){ echo '<img src="./Creation/capperi.png" alt="preview" id="icapperi" style="display:block">';} ?>
 	<?php if (isset($_POST["funghi"])){ echo '<img src="./Creation/funghi.png" alt="preview" id="ifunghi" style="display:block">';} ?>

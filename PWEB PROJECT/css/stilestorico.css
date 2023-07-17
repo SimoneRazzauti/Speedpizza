@@ -2,11 +2,6 @@ body{
     background-color: #e6e6e6;
 }
 
-@font-face { font-family: Raleway; src: url('http://localhost/Progetto%20PWEB/CSS/Font/Raleway-Regular.ttf'); } 
-@font-face { font-family: Franklin Gothic Book; src: url('http://localhost/Progetto%20PWEB/CSS/Font/franklin-gothic-book.ttf'); } 
-@font-face { font-family: Ikaros; src: url('http://localhost/Progetto%20PWEB/CSS/Font/Ikaros-Regular.otf'); } 
-@font-face { font-family: Circular; src: url('http://localhost/Progetto%20PWEB/CSS/Font/CircularSTD-Medium.otf'); } 
-
 .topnav{
   position: fixed;
   top: 0;

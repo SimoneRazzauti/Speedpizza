@@ -2,6 +2,11 @@
 session_start();
 require('inc/db.php'); # chiamata al db
 include('utility/function.php'); # funzioni di utilità
+
+if(isset($_COOKIE["NOME"])){
+  $_SESSION["username"] = $_COOKIE["NOME"];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -9,7 +14,7 @@ include('utility/function.php'); # funzioni di utilità
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Fastpizza Home </title>
+    <title> Speedpizza Home </title>
     <link rel="stylesheet" href="css/styleMenu.css" type="text/css">
     <link rel="stylesheet" href="css/styleFooter.css" type="text/css">
     <link rel="stylesheet" href="CSS/stilemain.css" type="text/css">
@@ -22,6 +27,7 @@ include('utility/function.php'); # funzioni di utilità
 <!-- Template per il menù -->
 <?=template_menu();?>
 
+
 <!-- Tasto tutorial -->
 <aside class="tutorial">
   <div> <img src="./immagini/alert_icon.png" alt="alert"> </div>
@@ -30,7 +36,7 @@ include('utility/function.php'); # funzioni di utilità
 
 <!-- MAIN PIC-->
 <div class="mainpic">
-  <h1 id="title">FAST PIZZA</h1>
+  <h1 id="title">Speed Pizza</h1>
   <h3 id="subtitle">La pizza come vuoi tu</h3>
 </div>
 
@@ -59,7 +65,7 @@ include('utility/function.php'); # funzioni di utilità
       <div class="promotion-image" id="image1"></div>
       <div class="promotion-content">
         <h2>Introduzione del Tutorial!</h2>
-        <p>Sei nuovo e non conosci Fastpizza? Ti consigliamo di dare un'occhiata al tutorial appena aggiunto!</p>
+        <p>Sei nuovo e non conosci Speedpizza? Ti consigliamo di dare un'occhiata al tutorial appena aggiunto!</p>
       </div>
     </div>
     <div class="promotion">
@@ -118,7 +124,8 @@ N&ordm;Persone:
 </form>
 </div>
 
-<?php /* VALIDAZIONE RESERVATION */
+<?php 
+/* VALIDAZIONE RESERVATION */
 
 if(isset($_POST['save'])){
   
@@ -179,6 +186,11 @@ if(isset($_POST['save'])){
       </div>
       ';
       mysqli_query($con,"INSERT INTO prenotazioni (nome, data, orario, numpersone) VALUES ('".$name."','".$_POST["theDate"]."','".$_POST["theTime"]."','".$numb."')");
+      echo '
+      <script>
+        window.location.href = "index.php#image3";
+      </script>
+      '; // ancora
     }
   }
   
@@ -191,7 +203,7 @@ if(isset($_POST['save'])){
 
 <!-- MODAL PER IL LOGIN --> 
   <div id="id01" class="modal">
-    <form class="modal-content animate" method="post" name="login" action="./utility/login.php">
+    <form class="modal-content animate" method="post" name="login" action="./utility/Login.php">
       <div class="imgcontainer">
         <span onclick="closemodal()" class="close" title="Close Modal">&times;</span> <!-- Span chiusura modal -->
         <img src="immagini/avatar.png" alt="Avatar" class="avatar">
@@ -210,7 +222,16 @@ if(isset($_POST['save'])){
             
             echo '<p id="errore_login">'.' '.$_SESSION['error'].'<p>';
             unset($_SESSION['error']);
-            
+
+            echo '<script>
+            window.onload = function() {
+              var modal = document.getElementById(\'id01\'); // login
+              function openmodal() {
+                modal.style.display=\'block\';
+              }
+              openmodal();
+            }
+          </script>';
           }
     
         ?>
@@ -224,7 +245,7 @@ if(isset($_POST['save'])){
   </div>
 <!-- FINE MODAL LOGIN-->
 
-<!-- MODAL PULSANTE UTENTE -->
+<!-- MODAL UTENTE -->
 		<div id="id03" class="modal">
   		<div class="modal-content animate">
     		<div class="imgcontainer">
@@ -233,7 +254,7 @@ if(isset($_POST['save'])){
     		</div>
 
     		<div class="container-modal">
-      			<p><strong><?php echo $_SESSION["username"]; ?></strong></p>
+      			<p><strong><?php echo $_COOKIE["NOME"]; ?></strong></p>
             <button type="button" onclick="location.href = 'info.php';" class="modalbutton">Le mie informazioni</button>
       			<button type="button" onclick="location.href = 'storico.php';" class="modalbutton">Storico Ordini</button>
      			 <button type="button" onclick="location.href = './utility/logout.php';" class="modalbutton">Logout</button>
@@ -298,6 +319,19 @@ if(isset($_POST['save'])){
         </div>
         
         <?php
+            if(isset($_SESSION['emailErr']) || isset($_SESSION['emailErr']) || isset($_SESSION['nomeErr']) || isset($_SESSION['surnameErr']) || isset($_SESSION['usernameErr']) || isset($_SESSION['pswErr']) 
+                || isset($_SESSION['psw_repeatErr']) || isset($_SESSION['cittaErr']) || isset($_SESSION['indirizzoErr']) || isset($_SESSION['capErr'])){
+
+              echo '<script>
+              window.onload = function() {
+                var modal1 = document.getElementById(\'id02\'); // REGISTRAZIONE
+                function openmodal1() {
+                  modal1.style.display=\'block\';
+                }
+                openmodal1();
+              }
+            </script>';
+            }
             if(isset($_SESSION['emailErr'])){
               echo '<p class="err_register" id="emailErr">'.$_SESSION['emailErr'].'</p>';
               unset($_SESSION['emailErr']);
@@ -352,5 +386,6 @@ if(isset($_POST['save'])){
 <!-- Template per il footer -->
 <?=footer_php();?>
 <script src="js/mainscript.js"> </script>
+
 </body>
 </html>

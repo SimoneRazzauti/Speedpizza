@@ -1,9 +1,15 @@
 <?php
 session_start();
 require('inc/db.php');
+include('utility/function.php'); # funzioni di utilità
 
-if(!isset($_SESSION['username'])){
-	header('location: 404.php');
+if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
+  header('location: 404.php');
+exit;
+}
+
+if(isset($_COOKIE["NOME"])){
+$_SESSION["username"] = $_COOKIE["NOME"];
 }
 
 ?>
@@ -21,7 +27,7 @@ if(!isset($_SESSION['username'])){
     	<td><a href="./index.php">Home</a></td>
   		<td><a href="./index.php#hr1">Promozioni</a></td>
     	<td><a href="creation.php">Ordina Online</a></td>
-    	<td><a href="./index.php#hr2">Prenotazione</a></td>
+    	<td><a href="./index.php#image3">Prenotazione</a></td>
     	<td><a href="./index.php#contatti">Contatti</a></td>
 
     	<?php /* Verifica se l'utente è loggato e nel caso mostra il bottone con il nome */
@@ -84,7 +90,7 @@ if(!isset($_SESSION['username'])){
     		</div>
 
     		<div class="container-modal">
-      			<p><strong><?php echo $_SESSION["username"]; ?></strong></p>
+      			<p><strong><?php echo $_COOKIE["NOME"]; ?></strong></p>
 				<br>
 				<br>
       			<button type="button" onclick="location.href = 'info.php';" class="modalbutton">Le mie informazioni</button>

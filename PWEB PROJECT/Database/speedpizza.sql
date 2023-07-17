@@ -1,7 +1,7 @@
 SET NAMES latin1; 
-DROP DATABASE IF EXISTS `fastpizza`; 
-CREATE DATABASE IF NOT EXISTS `fastpizza`; 
-USE `fastpizza`; 
+DROP DATABASE IF EXISTS `speedpizza`; 
+CREATE DATABASE IF NOT EXISTS `speedpizza`; 
+USE `speedpizza`; 
 SET FOREIGN_KEY_CHECKS = 0; 
 SET GLOBAL EVENT_SCHEDULER = ON; 
 
