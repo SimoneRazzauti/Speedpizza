@@ -123,7 +123,6 @@
   object-fit: cover;
 }
 
-/* Rest of your CSS styles */
 .contacts .div-bottom {
   text-align: center;
   margin-top: 20px;
@@ -164,6 +163,7 @@
 }
 
 @media (min-width: 992px) {
+
   .contacts .div-left,
   .contacts .div-right {
     flex: 2;
@@ -177,5 +177,5 @@
     width: 400px;
     height: 400px;
   }
-  
+
 }

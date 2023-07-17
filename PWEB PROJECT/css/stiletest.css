@@ -1,16 +1,16 @@
-#resoconto{
+#resoconto {
 	width: 50%;
 	border: 2px solid black;
 	min-height: 47vw;
 }
 
-p{
+p {
 	font-family: Raleway, sans-serif;
 	font-size: 1.2vw;
 	padding: 0vw 2vw;
 }
 
-h1{
+h1 {
 	font-family: Raleway, sans-serif;
 	text-align: center;
 	font-size: 2.5vw;
@@ -24,7 +24,7 @@ h1{
 	background-color: #e6e6e6;
 }
 
-h2{
+h2 {
 	font-family: Raleway, sans-serif;
 	font-size: 1.5vw;
 	padding: 0.5vw 2vw;
@@ -37,7 +37,7 @@ h2{
 
 }
 
-h3{
+h3 {
 	text-align: center;
 	font-family: Raleway, sans-serif;
 	font-size: 1.5vw;
@@ -46,14 +46,14 @@ h3{
 	font-style: italic;
 }
 
-.icon{
+.icon {
 	width: 5%;
 	height: 5%;
 	position: relative;
 	top: 0.6vw;
 }
 
-#preview{
+#preview {
 	position: fixed;
 	border: 2px solid black;
 	width: 25vw;
@@ -62,7 +62,7 @@ h3{
 	top: 1%;
 }
 
-#preview p{
+#preview p {
 	font-family: Raleway, sans-serif;
 	text-align: center;
 	font-size: 1.5vw;
@@ -73,7 +73,7 @@ h3{
 	top: -0.5vw;
 }
 
-hr{
+hr {
 	width: 80%;
 	border-top: 2px solid black;
 	position: relative;
@@ -81,7 +81,7 @@ hr{
 }
 
 
-#preview img{
+#preview img {
 	display: none;
 	width: 80%;
 	position: absolute;
@@ -90,27 +90,38 @@ hr{
 	z-index: 1;
 }
 
-#preview #tpomodoro{
+#preview #tpomodoro {
 	z-index: 2;
 }
 
-#preview #cmozzarella{
+#preview #cmozzarella {
 	z-index: 3;
 }
 
- #preview #ipomodorini{
- 	z-index: 4;
- }
+#preview #ipomodorini {
+	z-index: 4;
+}
 
-#preview #ipeperoni , #preview #ifunghi, #preview #isalamino, #preview #ipatatine, #preview #icipolla, #preview #iwurstel, #preview #ipcotto, #preview #iacciughe{
+#preview #ipeperoni,
+#preview #ifunghi,
+#preview #isalamino,
+#preview #ipatatine,
+#preview #icipolla,
+#preview #iwurstel,
+#preview #ipcotto,
+#preview #iacciughe {
 	z-index: 5;
 }
 
-#preview #icapperi, #preview #irucola, #preview #iolive, #preview #ibasilico, #preview #iorigano{
+#preview #icapperi,
+#preview #irucola,
+#preview #iolive,
+#preview #ibasilico,
+#preview #iorigano {
 	z-index: 6;
 }
 
-#details{
+#details {
 	background-color: #e6e6e6;
 	position: fixed;
 	width: 35%;
@@ -121,14 +132,14 @@ hr{
 
 }
 
-#details p{
+#details p {
 	font-family: Raleway, sans-serif;
 	font-size: 1.2vw;
 	position: relative;
 	top: -1.5vw;
 }
 
-#pulsanti{
+#pulsanti {
 	width: 40%;
 	height: 6%;
 	position: fixed;
@@ -136,7 +147,7 @@ hr{
 	top: 90%;
 }
 
-#add_order{
+#add_order {
 	border: none;
 	background-color: #00cc00;
 	color: #f2f2f2;
@@ -149,13 +160,13 @@ hr{
 	right: 10vw;
 }
 
-#add_order:hover{
-	background: rgba(0,0,0,0);
+#add_order:hover {
+	background: rgba(0, 0, 0, 0);
 	color: #00cc00;
 	box-shadow: inset 0 0 0 3px #00cc00;
 }
 
-#cancel_order{
+#cancel_order {
 	border: none;
 	background-color: #e60000;
 	color: #f2f2f2;
@@ -168,13 +179,13 @@ hr{
 	right: 30vw;
 }
 
-#cancel_order:hover{
-	background: rgba(0,0,0,0);
+#cancel_order:hover {
+	background: rgba(0, 0, 0, 0);
 	color: #e60000;
 	box-shadow: inset 0 0 0 3px #e60000;
 }
 
-#total{
+#total {
 	position: fixed;
 	top: 51.5%;
 	right: 14%;
@@ -182,7 +193,7 @@ hr{
 	width: 20vw;
 }
 
-#total p{
+#total p {
 	font-size: 2vw;
 	font-family: Raleway, sans-serif;
 	font-weight: bold;
@@ -191,6 +202,6 @@ hr{
 	width: 15vw;
 }
 
-#total p strong{
+#total p strong {
 	color: red;
 }

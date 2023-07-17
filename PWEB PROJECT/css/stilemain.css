@@ -32,13 +32,33 @@ body {
 
 /* Animazione Slide Text */
 @-webkit-keyframes anim_tutor {
-  0%, 0% { right: -100%; opacity: 0; }
-  100%, 100% { right: 1%; opacity: 1; }
+
+  0%,
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+
+  100%,
+  100% {
+    right: 1%;
+    opacity: 1;
+  }
 }
 
 @keyframes anim_tutor {
-  0%, 0% { right: -100%; opacity: 0; }
-  100%, 100% { right: 1%; opacity: 1; }
+
+  0%,
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+
+  100%,
+  100% {
+    right: 1%;
+    opacity: 1;
+  }
 }
 
 .tutorial div {
@@ -81,7 +101,8 @@ body {
 /* MAIN PIC*/
 .mainpic {
   position: relative;
-  top: 80px; /* Regola l'altezza del mainpic rispetto alla topnav */
+  top: 80px;
+  /* Regola l'altezza del mainpic rispetto alla topnav */
   width: 100%;
   overflow: hidden;
 }
@@ -90,7 +111,8 @@ body {
   content: "";
   display: block;
   position: relative;
-  padding-top: 56.25%; /* Rapporto 16:9 per l'immagine di sfondo */
+  padding-top: 56.25%;
+  /* Rapporto 16:9 per l'immagine di sfondo */
   background-image: url('../immagini/pizzalq.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -123,23 +145,63 @@ body {
 
 /* Animazione Slide Text */
 @-webkit-keyframes anim_1 {
-  0%, 0% { left: -100%; opacity: 0; }
-  100%, 100% { left: 32%; opacity: 1; }
+
+  0%,
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  100%,
+  100% {
+    left: 32%;
+    opacity: 1;
+  }
 }
 
 @keyframes anim_1 {
-  0%, 0% { left: -100%; opacity: 0; }
-  100%, 100% { left: 32%; opacity: 1; }
+
+  0%,
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  100%,
+  100% {
+    left: 32%;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes anim_2 {
-  0%, 0% { left: -100%; opacity: 0; }
-  100%, 100% { left: 32%; opacity: 1; }
+
+  0%,
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  100%,
+  100% {
+    left: 32%;
+    opacity: 1;
+  }
 }
 
 @keyframes anim_2 {
-  0%, 0% { left: -100%; opacity: 0; }
-  100%, 100% { left: 32%; opacity: 1; }
+
+  0%,
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  100%,
+  100% {
+    left: 32%;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -152,7 +214,7 @@ body {
     left: 32%;
     top: 32%;
   }
-  
+
   #subtitle {
     font-size: 3vw;
     left: 32%;
@@ -202,7 +264,8 @@ body {
 .rightimage {
   position: relative;
   width: 37%;
-  padding-top: 23.34%; /* Rapporto 16:9 per l'immagine di sfondo */
+  padding-top: 23.34%;
+  /* Rapporto 16:9 per l'immagine di sfondo */
   background-image: url('../immagini/pizze.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -211,7 +274,8 @@ body {
 
 #start-now {
   position: absolute;
-  top: calc(50% - 1.2vw); /* Altezza del testo diviso 2 per centrarlo */
+  top: calc(50% - 1.2vw);
+  /* Altezza del testo diviso 2 per centrarlo */
   left: 0;
   right: 0;
   margin: auto;
@@ -231,11 +295,13 @@ body {
 
   .rightimage {
     width: 70%;
-    padding-top: 62.375%; /* Rapporto 16:9 per l'immagine di sfondo */
+    padding-top: 62.375%;
+    /* Rapporto 16:9 per l'immagine di sfondo */
   }
 
   #start-now {
-    top: calc(50% - 32vw); /* Altezza del testo diviso 2 per centrarlo */
+    top: calc(50% - 32vw);
+    /* Altezza del testo diviso 2 per centrarlo */
     left: calc(50% - 24vw);
     font-size: 2vw;
   }
@@ -446,44 +512,17 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-  background-image: url('../immagini/calendarWhite.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 20px;
-  height: 20px;
-  opacity: 0.5;
-  cursor: pointer;
+  /*freccia input-> date*/
+  color: #080808;
   transform: rotate(180deg);
-  transition: transform 0.5s;
-  z-index: 1;
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator:hover {
-  background-image: url('../immagini/calendarBlack.png');
-  transform: rotate(180deg);
-  transition: transform 0.5s;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
-
-input[type="date"]::-moz-calendar-picker-indicator {
-  background-image: url('../immagini/calendarWhite.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 20px;
-  height: 20px;
-  opacity: 0.5;
-  cursor: pointer;
-  transform: rotate(180deg);
-  transition: transform 0.5s;
-}
-
-input[type="date"]::-moz-calendar-picker-indicator:hover {
-  background-image: url('../immagini/calendarBlack.png');
-  transform: rotate(180deg);
-  transition: transform 0.5s;
-}
-
 
 #firstname,
 input[type="number"] {
@@ -529,6 +568,7 @@ input[type="submit"]:hover {
 }
 
 @-webkit-keyframes shake {
+
   10%,
   90% {
     transform: translateX(-1px);
@@ -552,6 +592,7 @@ input[type="submit"]:hover {
 }
 
 @keyframes shake {
+
   10%,
   90% {
     transform: translateX(-1px);

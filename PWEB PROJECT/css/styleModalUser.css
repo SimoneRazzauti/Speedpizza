@@ -28,29 +28,29 @@
 }
 
 .cancelbtn:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .imgcontainer {
-    text-align: center;
-    width: 100%;
-    height: 30%;
-    position: relative;
+  text-align: center;
+  width: 100%;
+  height: 30%;
+  position: relative;
 }
 
 img.avatar {
-    width: 22%;
-    position: relative;
-    top: 1em;
+  width: 35%;
+  position: relative;
+  top: 1em;
 
 }
 
 .container-modal {
-    padding: 16px;
-    margin-top: 6vw;
+  padding: 16px;
+  margin-top: 6vw;
 }
 
-.container-modal p{
+.container-modal p {
 
   position: relative;
   width: 100%;
@@ -70,9 +70,9 @@ img.avatar {
 }
 
 span.psw {
-    float: right;
-    padding-top: 16px;
-    font-family: Raleway, sans-serif;
+  float: right;
+  padding-top: 16px;
+  font-family: Raleway, sans-serif;
 }
 
 
@@ -99,13 +99,13 @@ span.psw {
 }
 
 .modalbutton:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 300;
   left: 0;
   top: 0;
   width: 100%;
@@ -126,52 +126,63 @@ span.psw {
 }
 
 .close {
-    position: absolute;
-    right: 20px;
-    top: 0.1em;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 0.1em;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: red;
-    cursor: pointer;
+  color: red;
+  cursor: pointer;
 }
 
 .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
+  from {
+    -webkit-transform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
 }
-    
+
 @keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
 }
 
 @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+  span.psw {
+    display: block;
+    float: none;
+  }
+
+  .cancelbtn {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 750px) {
-    img.avatar {
-      width: 35%;
-      top: 1.5em;
-    }
-    
-    .container-modal {
-      margin-top: 2vw;
-    }
+  img.avatar {
+    width: 35%;
+    top: 1.5em;
   }
+
+  .container-modal {
+    margin-top: 2vw;
+  }
+}

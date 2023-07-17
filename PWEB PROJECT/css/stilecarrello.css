@@ -1,188 +1,407 @@
-body{
+/* CARRELLO VUOTO */
+@media (max-width: 600px) {
+  body {
     background-color: #e6e6e6;
     overflow-x: hidden;
-}
+  }
 
-.topnav{
-  position: fixed;
-  top: 0;
-  width: 98.8%;
-  height: 4.09vw;
-  z-index: 300;
-    background-color: black;
-    overflow: hidden;
-}
-
-.topnav table{
-  margin:auto;
-}
-
-.topnav td a{
-    position:relative;
-    top: 0.95vw;
-    color: #f2f2f2;
-    text-align: center;
-    font-family: 'Franklin Gothic Book, Helvetica', sans-serif;
-    padding: 1.2vw 1.1vw;
-    text-decoration: none;
-    font-size: 1.5VW;
-    height: 4vw;
-}
-
-.topnav td a:hover {
-    background-color: white;
-    color: black;
-    cursor: pointer;
-}
-
-#center_div {
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:  80vw;
-    min-height: 38vw;
+  #center_div {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    width: 80vw;
+    min-height: 111vw;
     font-family: Raleway, sans-serif;
-    margin-left:-40vw; /* -1/2 width */
-    margin-top: -17vw; /* -1/2 height */
+    margin-left: -40vw;
+    margin-top: -30vw;
     border: 2px solid #a6a6a6;
     background-color: white;
-}
+  }
 
-#center_div h1{
-    font-size: 2vw;
+  #center_div h1 {
+    font-size: 7vw;
     font-weight: bold;
     position: relative;
-    left: 2vw;
-}
-
-#center_div hr{
-    width: 95%;
+    left: 0vw;
     text-align: center;
-    border-top: 1px solid #a6a6a6;;
-}
+    background-color: #e6e6e6;
+    margin: 4%;
+  }
 
-#center_div section{
+  #center_div section {
     width: 95%;
-    height: 7vw;
+    height: 24vw;
     position: relative;
+    left: 3.5%;
+    top: -0.5vw;
+  }
+
+
+  #center_div footer {
+    width: 95%;
+    height: 14vw;
+    position: absolute;
     left: 2.5%;
-    top: 0.5vw;
-}
+    top: 91%;
+  }
 
+  #pay_form {
+    position: absolute;
+    top: -34%;
+    width: 95%;
+    height: 14vw;
+    left: 2.3%;
+  }
 
-.image{
+  #center_div footer a {
+    font-family: Raleway, sans-serif;
+    position: relative;
+    top: 4.8vw;
+    left: 1.5vw;
+    color: #007AFF;
+    font-size: 4vw;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  #order_complete {
+    position: absolute;
+    left: 68.5%;
+    border-radius: 6px;
+    font-size: 4.2vw;
+    color: white;
+    background-color: #007AFF;
+    font-weight: lighter;
+    border: 1px solid #CCC;
+    padding: 0.7vw 1.5vw;
+    border: none;
+    top: 55%;
+  }
+
+  #order_complete:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  hr#longBar {
+    position: absolute;
+    top: 91%;
+  }
+
+  .image {
     width: 6vw;
-    height: 80%;
+    height: 48%;
     position: relative;
     top: 0.5vw;
-    left: 0.5vw;
-}
+    left: -0.5vw;
+  }
 
-.image img{
-    width: 93%;
+  .testo {
+    position: absolute;
+    top: -10%;
+    left: 11%;
+    height: 98%;
+    width: 89.5%;
+  }
+
+  .testo h2 {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    font-size: 2.5vw;
+    font-weight: bold;
+  }
+
+  .testo .price {
+    position: absolute;
+    top: 0;
+    right: 1%;
+    font-size: 5.2vw;
+    font-weight: bold;
+  }
+
+  .testo .description_p {
+    position: absolute;
+    top: 3.2vw;
+    left: 5%;
+    font-size: 2.0vw;
+    font-style: italic;
+    width: 27vw;
+    height: 23vw;
+    word-wrap: break-word;
+  }
+
+  .testo .description_b {
+    position: absolute;
+    top: 3.2vw;
+    right: 18%;
+    font-size: 2vw;
+    font-style: italic;
+    width: 25vw;
+    height: 23vw;
+    word-wrap: break-word;
+  }
+
+  .remove_form {
+    position: absolute;
+    right: 0%;
+    top: 52%;
+    width: 12vw;
+    height: 3.5vw;
+  }
+
+  .remove_btn {
+    color: #007AFF;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 3vw;
+    position: absolute;
+    padding: 0;
+  }
+
+  #total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    width: 95%;
+    height: 14vw;
+    position: absolute;
+    left: 2.5%;
+    top: 79%;
+  }
+
+  #total p {
+    font-size: 2vw;
+    margin: 0;
+  }
+
+  #total h2 {
+    font-size: 4.5vw;
+    font-weight: bold;
+  }
+
+  .image img {
+    width: 165%;
     position: relative;
     left: 0.3vw;
+  }
+  
+  /* Carrello vuoto */
+
+  #empty_cart {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    margin-top: 2vw;
+    margin-bottom: 8vw;
+  }
+
+  #h2_empty {
+    font-size: 6vw;
+    text-align: center;
+  }
+
+  #a_empty {
+    font-size: 4vw;
+    color: #007AFF;
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 19vw;
+    transform: translate(-50%);
+  }
+
+  #a_empty:visited {
+    color: #007AFF;
+  }
+
+  .totalePagamento {
+    font-size: 4.5vw;
+    position: absolute;
+    top: 7.1vw;
+    right: 1%;
+    font-weight: bold;
+  }
+
 }
 
-.testo{
+
+
+@media (min-width: 601px) {
+  body {
+    background-color: #e6e6e6;
+    overflow-x: hidden;
+  }
+
+  #center_div {
     position: absolute;
-    top: 8%;
+    left: 50%;
+    top: 41%;
+    width: 80vw;
+    min-height: 72vw;
+    font-family: Raleway, sans-serif;
+    margin-left: -40vw;
+    margin-top: -17vw;
+    border: 2px solid #a6a6a6;
+    background-color: white;
+  }
+
+  #center_div h1 {
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 2vw;
+    margin: 0;
+    position: relative;
+    left: 0;
+    background-color: #e6e6e6;
+    margin: 1%;
+  }
+
+  #center_div hr {
+    width: 95%;
+    text-align: center;
+    border-top: 1px solid #a6a6a6;
+    margin: 0 auto;
+    margin-bottom: 2vw;
+    top: 14%;
+  }
+
+  #center_div section {
+    width: 95%;
+    height: 7vw;
+    margin: 0 auto;
+    padding: 1vw;
+    position: relative;
+    left: 2.5%;
+    top: -0.5vw;
+  }
+
+  .image {
+    width: 6vw;
+    height: 80%;
+    margin-right: 1vw;
+  }
+
+  .image img {
+    width: 93%;
+  }
+
+  .testo {
+    position: absolute;
+    top: 3%;
     left: 10%;
     height: 80%;
     width: 88.5%;
+  }
 
-}
-
-.testo h2{
-    position: absolute;
-    top: 0;
-    left: 5%;
+  .testo h2 {
     font-size: 1.2vw;
     font-weight: bold;
-}
+    text-align: left;
+    margin: 0;
+  }
 
-.testo .price{
+  .testo .price {
+    font-size: 1.2vw;
+    font-weight: bold;
+    text-align: right;
+    margin: 0;
     position: absolute;
     top: 0;
     right: 5%;
-    font-size: 1.2vw;
-    font-weight: bold;
-}
+  }
 
-
-.testo .description_p{
-    position: absolute;
-    top: 2vw;
-    left: 5%;
+  .testo .description_p {
     font-size: 0.8vw;
     font-style: italic;
     width: 23vw;
     height: 4vw;
-}
-
-.testo .description_b{
+    margin: 0;
     position: absolute;
-    top: 0.3vw;
-    right: 30%;
+    top: 3vw;
+    left: 5%;
+    word-wrap: break-word;
+  }
+
+  .testo .description_b {
     font-size: 0.8vw;
     font-style: italic;
     width: 13vw;
     height: 6vw;
+    position: absolute;
+    top: 0.3vw;
+    right: 30%;
+    margin: 0;
+    word-wrap: break-word;
+  }
 
-}
-
-
-#total{
-    width: 95%;
+  #total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    width: 53%;
     height: 10vw;
-    position: relative;
-    left: 2.5%;
-}
+    position: absolute;
+    left: 44.5%;
+    top: 80%;
+    margin: 0 auto;
+  }
 
-#total p{
+  #total p {
     font-size: 1vw;
     position: relative;
-    left: 77%;
-    top:1vw;
-}
+    margin: 0;
+    padding: 1%;
+  }
 
-#total h2{
+  #total h2 {
     font-size: 1.5vw;
     position: relative;
-    left: 79.5%;
-    top: 1vw;
+    padding: 1%;
     font-weight: bold;
-}
+    margin: 0;
+  }
 
-#center_div footer{
+  #center_div footer {
     width: 95%;
-    height: 4vw;
-    position: relative;
+    height: 6vw;
+    margin: 0 auto;
+    top: 65vw;
     left: 2.5%;
-}
+    position: absolute;
+  }
 
-#center_div footer a{
+  #center_div footer a {
     font-family: Raleway, sans-serif;
     position: relative;
-    top: 0.8vw;
+    top: 2.8vw;
     left: 1.5vw;
     color: #007AFF;
     font-size: 1.2vw;
     text-decoration: none;
-    cursor:pointer;
+    cursor: pointer;
     z-index: 5;
-}
+  }
 
-#center_div footer a:visited{
+  #center_div footer a:visited {
     color: #007AFF;
-}
+  }
 
-#pay_form{
+  #pay_form {
     position: relative;
-    top: -1.2vw;
-}
+    top: 0.8vw;
+  }
 
-#order_complete{
+  #order_complete {
     position: relative;
     left: 82%;
     border-radius: 5px;
@@ -193,195 +412,74 @@ body{
     border: 1px solid #CCC;
     padding: 0.7vw 1.5vw;
     border: none;
+  }
 
-}
-
-#order_complete:hover{
+  #order_complete:hover {
     opacity: 0.8;
     cursor: pointer;
-}
+  }
 
-/* Carrello vuoto */
+  /* Carrello vuoto */
 
-#empty_cart{
+  #empty_cart {
     position: relative;
     left: 38%;
     top: -2vw;
     width: 20%;
-}
+  }
 
-#h2_empty{
+  #h2_empty {
     font-size: 3vw;
     text-align: center;
-}
+  }
 
-#a_empty{
+  #a_empty {
     font-size: 2vw;
     color: #007AFF;
     text-decoration: none;
     font-family: Raleway, sans-serif;
     position: relative;
     left: 15%;
-}
+  }
 
-#a_empty:visited{
+  #a_empty:visited {
     color: #007AFF;
-}
+  }
 
-.remove_form{
+  .remove_form {
     position: absolute;
     right: 2%;
     top: 60%;
     width: 5vw;
     height: 1.5vw;
-}
+  }
 
-.remove_btn{
+  .remove_btn {
     color: #007AFF;
     border: none;
     background-color: white;
     cursor: pointer;
     font-size: 1vw;
-}
+  }
 
-
-
-/* MODAL UTENTE */
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #ff1a1a;
-    border: none;
-    cursor: pointer;
-}
-
-.cancelbtn:hover {
-    opacity: 0.8;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-    text-align: center;
-    width: 100%;
-    height: 30%;
-    position: relative;
-}
-
-img.avatar {
-    width: 22%;
-    position: relative;
-    top: 1em;
-
-}
-
-.container-modal {
-    padding: 16px;
-}
-
-.container-modal p{
-  position: relative;
-  width: 100%;
-  text-align: center;
-}
-
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-    font-family: Raleway, sans-serif;
-}
-
-
-#inputmodal {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-/* Style of modal buttons */
-.modalbutton {
-    background-color: black;
-    color: #f2f2f2;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-.modalbutton:hover {
-    opacity: 0.8;
-}
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 300; /* Sit on top */
-    padding-top: 7vw; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    border: 1px solid #888;
-    width: 50%;
-    height: 75%;
-    font-family: Raleway, sans-serif;
-    vertical-align: middle;
-}
-
-
-/* The Close Button (x) */
-.close {
+  .totalePagamento {
+    font-size: 1.5vw;
     position: absolute;
-    right: 20px;
-    top: 0.1em;
-    color: #000;
-    font-size: 35px;
+    top: 0.1vw;
+    right: 10%;
     font-weight: bold;
+  }
 }
 
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
+hr#longBar {
+  position: absolute;
+  top: 90%;
 }
 
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+.description_b strong {
+  color: #007AFF;
 }
 
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-}
-    
-@keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+.totalePagamento strong {
+  color: red;
 }

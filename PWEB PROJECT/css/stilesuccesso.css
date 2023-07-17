@@ -1,95 +1,94 @@
 /* Stili per la modalità desktop */
 #center_div {
-    position: absolute;
-    left: 50px;
-    top: 145px;
-    width: 90%;
-    height: 87%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 9px 9px 127px 16px rgba(0, 0, 0, 0.5);
-  }
-  
-  .imgdiv {
-    text-align: center;
-    padding-top: 20px;
-  }
-  
+  position: absolute;
+  left: 50px;
+  top: 145px;
+  width: 90%;
+  height: 87%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 9px 9px 127px 16px rgba(0, 0, 0, 0.5);
+}
+
+.imgdiv {
+  text-align: center;
+  padding-top: 20px;
+}
+
+img.check {
+  width: 80%;
+  max-width: 200px;
+  height: auto;
+}
+
+#intestation {
+  font-family: Circular, sans-serif;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#intestation h1 {
+  font-size: 3rem;
+  margin-top: 0;
+  color: #4d4d4d;
+}
+
+#intestation p {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #262626;
+}
+
+#intestation a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #4d4dff;
+}
+
+#intestation a:visited {
+  color: #4d4dff;
+}
+
+/* Stili per la modalità media */
+@media screen and (max-width: 768px) {
   img.check {
-    width: 80%;
-    max-width: 200px;
+    width: 50%;
+    max-width: 150px;
     height: auto;
   }
-  
-  #intestation {
-    font-family: Circular, sans-serif;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
+
   #intestation h1 {
-    font-size: 3rem;
-    margin-top: 0;
-    color: #4d4d4d;
-  }
-  
-  #intestation p {
     font-size: 2rem;
-    margin-bottom: 20px;
-    color: #262626;
   }
-  
+
+  #intestation p {
+    font-size: 1.5rem;
+  }
+
   #intestation a {
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #4d4dff;
+    font-size: 1rem;
   }
-  
-  #intestation a:visited {
-    color: #4d4dff;
+}
+
+/* Stili per la modalità mobile */
+@media screen and (max-width: 480px) {
+  img.check {
+    width: 70%;
+    max-width: 150px;
+    height: auto;
   }
-  
-  /* Stili per la modalità media */
-  @media screen and (max-width: 768px) {
-    img.check {
-      width: 50%;
-      max-width: 150px;
-      height: auto;
-    }
-  
-    #intestation h1 {
-      font-size: 2rem;
-    }
-  
-    #intestation p {
-      font-size: 1.5rem;
-    }
-  
-    #intestation a {
-      font-size: 1rem;
-    }
+
+  #intestation h1 {
+    font-size: 1.5rem;
   }
-  
-  /* Stili per la modalità mobile */
-  @media screen and (max-width: 480px) {
-    img.check {
-      width: 70%;
-      max-width: 150px;
-      height: auto;
-    }
-  
-    #intestation h1 {
-      font-size: 1.5rem;
-    }
-  
-    #intestation p {
-      font-size: 1rem;
-    }
-  
-    #intestation a {
-      font-size: 0.8rem;
-    }
+
+  #intestation p {
+    font-size: 1rem;
   }
-  
+
+  #intestation a {
+    font-size: 0.8rem;
+  }
+}

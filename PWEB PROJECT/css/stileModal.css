@@ -1,8 +1,17 @@
 /* MODAL REGISTRAZIONE */
 
-.modal1_input, #modal1_email, #modal1_nome, #modal1_surname, #modal1_password, #modal1_repeat, #modal1_cap {
+.modal1_input,
+#modal1_email,
+#modal1_nome,
+#modal1username,
+#modal1citta,
+#modal1indirizzo,
+#modal1_surname,
+#modal1_password,
+#modal1_repeat,
+#modal1_cap {
   width: 100%;
-  padding: 12px 20px;
+  padding: 7px 6px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -10,7 +19,8 @@
   font-family: Raleway, sans-serif;
 }
 
-.modal1_input:focus, #modal1_email:focus{
+.modal1_input:focus,
+#modal1_email:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -37,7 +47,8 @@
   opacity: 1;
 }
 
-#modal1button_signup:hover, #modal1button_cancel:hover {
+#modal1button_signup:hover,
+#modal1button_cancel:hover {
   opacity: 0.8;
 }
 
@@ -46,7 +57,8 @@
   background-color: #ff1a1a;
 }
 
-.cancelbutn, .signupbtn {
+.cancelbutn,
+.signupbtn {
   float: left;
   width: 50%;
 }
@@ -57,64 +69,73 @@
   font-family: sans-serif;
 }
 
-.container p{
+.container p {
   position: relative;
   width: 100%;
   text-align: center;
 }
 
 .modal1 {
-    display: none;
-    position: fixed;
-    z-index: 300;
-    padding-top: 8vw;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 300;
+  padding-top: 8vw;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 
 @-moz-document url-prefix() {
 
- .modal-content1 {
-  padding: 1vw 1vw;
+  .modal-content1 {
+    padding: 1vw 1vw;
     background-color: #fefefe;
     margin: auto;
     border: 1px solid #888;
     width: 60%;
-    height: 70vw;
+    height: auto;
     font-family: Raleway, sans-serif;
     vertical-align: middle;
     position: relative;
-    top: -6vw;
+    top: -9vw;
   }
 
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0){
+@media screen and (-webkit-min-device-pixel-ratio:0),
+screen and (min--moz-device-pixel-ratio: 0) {
 
-.modal-content1 {
-	padding: 1vw 1vw;
+  .modal-content1 {
+    padding: 1vw 1vw;
     background-color: #fefefe;
     margin: auto;
     border: 1px solid #888;
     width: 63%;
-    min-height: 70vw;
+    min-height: auto;
     font-family: Raleway, sans-serif;
     vertical-align: middle;
     position: relative;
-    top: -6vw;
-    font-size: 1.2vw;
+    top: -9vw;
+  }
+
+
+  h1 {
+    font-size: 4vw;
+  }
+
+  b {
+    font-size: 2.1vw;
   }
 }
 
 #hrmodal1 {
   border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+  margin-bottom: 2px;
 }
 
 .close1 {
@@ -140,12 +161,14 @@
 }
 
 @media screen and (max-width: 500px) {
-  .cancelbutn, .signupbtn {
+
+  .cancelbutn,
+  .signupbtn {
     width: 100%;
   }
 }
 
-#errore_login{
+#errore_login {
   color: black;
   font-weight: bold;
   border: 1px solid red;
@@ -157,32 +180,32 @@
   font-size: 1.2vw;
 }
 
-.error_register{
+.error_register {
   color: red;
   font-size: 0.9vw;
   display: none;
 }
 
-.err_reservation{
+.err_reservation {
   color: red;
   font-size: 0.9vw;
-  font-family:  Raleway, sans-serif ;
+  font-family: Raleway, sans-serif;
   position: absolute;
   top: 178vw;
 }
 
-#nameErr{
+#nameErr {
   left: 38.5%;
 }
 
-#numbErr{
+#numbErr {
   left: 66.5%;
 }
 
-.err_register{
+.err_register {
   color: red;
   font-size: 0.8vw;
-  font-family:  Raleway, sans-serif ;
+  font-family: Raleway, sans-serif;
   position: absolute;
   left: 7vw;
 
@@ -192,96 +215,96 @@
 
 @-moz-document url-prefix() {
 
-#emailErr{
-  top: 9.5vw;
+  #emailErr {
+    top: 9.5vw;
+
+  }
+
+  #nomeErr {
+    top: 15vw;
+  }
+
+  #surnameErr {
+    top: 20.2vw;
+  }
+
+  #usernameErr {
+    top: 25.3vw;
+    left: 7.5vw;
+  }
+
+  #pswErr {
+    top: 30.5vw;
+    left: 7.5vw;
+  }
+
+  #psw_repeatErr {
+    top: 35.8vw;
+    left: 10.5vw;
+  }
+
+  #cittaErr {
+    top: 40.8vw;
+  }
+
+  #indirizzoErr {
+    top: 50.5vw;
+  }
+
+  #capErr {
+    top: 51vw;
+  }
 
 }
 
-#nomeErr{
-  top: 15vw;
+@media screen and (-webkit-min-device-pixel-ratio:0),
+screen and (min--moz-device-pixel-ratio: 0) {
+
+  #emailErr {
+    top: 11vw;
+
+  }
+
+  #nomeErr {
+    top: 16vw;
+  }
+
+  #surnameErr {
+    top: 21.2vw;
+  }
+
+  #usernameErr {
+    top: 26.3vw;
+    left: 7.5vw;
+  }
+
+  #pswErr {
+    top: 31.7vw;
+    left: 7.5vw;
+  }
+
+  #psw_repeatErr {
+    top: 36.3vw;
+    left: 10.5vw;
+  }
+
+  #cittaErr {
+    top: 41.8vw;
+  }
+
+  #indirizzoErr {
+    top: 50.5vw;
+  }
+
+  #capErr {
+    top: 52vw;
+  }
 }
-
-#surnameErr{
-  top: 20.2vw;
-}
-
-#usernameErr{
-  top: 25.3vw;
-  left: 7.5vw;
-}
-
-#pswErr{
-  top: 30.5vw;
-  left: 7.5vw;
-}
-
-#psw_repeatErr{
-  top: 35.8vw;
-  left: 10.5vw;
-}
-
-#cittaErr{
-  top: 40.8vw;
-}
-
-#indirizzoErr{
-  top: 50.5vw;
-}
-
-#capErr{
-  top: 51vw;
-}
-
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0){
-
-#emailErr{
-top: 11vw;
-
-}
-
-#nomeErr{
-  top: 16vw;
-}
-
-#surnameErr{
-  top: 21.2vw;
-}
-
-#usernameErr{
-  top: 26.3vw;
-  left: 7.5vw;
-}
-
-#pswErr{
-  top: 31.7vw;
-  left: 7.5vw;
-}
-
-#psw_repeatErr{
-  top: 36.3vw;
-  left: 10.5vw;
-}
-
-#cittaErr{
-  top: 41.8vw;
-}
-
-#indirizzoErr{
-  top: 50.5vw;
-}
-
-#capErr{
-  top: 52vw;
-}
-}
-
 
 .show-password-button {
   position: absolute;
-  top: 25px;
-  right: 15px;
+  top: 27%;
+  right: 0%;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -289,4 +312,9 @@ top: 11vw;
 
 .show-password-button.visible {
   color: red;
+}
+
+.modal1 h1 {
+  font-size: 5vw;
+  margin: 0.5vw;
 }
