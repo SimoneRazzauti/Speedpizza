@@ -128,6 +128,11 @@ N&ordm;Persone:
 /* VALIDAZIONE RESERVATION */
 
 if(isset($_POST['save'])){
+  echo '
+  <script>
+    window.location.href = "index.php#hr2";
+  </script>
+  '; // ancora
   
   if (empty($_POST["firstname"])) {
     $nameErr = "Devi inserire un nome.";
@@ -186,11 +191,6 @@ if(isset($_POST['save'])){
       </div>
       ';
       mysqli_query($con,"INSERT INTO prenotazioni (nome, data, orario, numpersone) VALUES ('".$name."','".$_POST["theDate"]."','".$_POST["theTime"]."','".$numb."')");
-      echo '
-      <script>
-        window.location.href = "index.php#image3";
-      </script>
-      '; // ancora
     }
   }
   

@@ -383,7 +383,7 @@ body {
   border-radius: 0.5vw;
   width: 100%;
   height: 7vw;
-  margin-bottom: 13%;
+  margin-bottom: 0%;
 }
 
 #hr2 {
@@ -421,15 +421,16 @@ body {
   font-size: 1.5vw;
 }
 
-input[type=date] {
+input[type="date"] {
   border: 3px solid #080808;
   font-family: Circular, sans-serif;
   font-size: 1.5vw;
   padding: 0.25vw 0.5vw;
   text-align: center;
+  z-index: 2;
 }
 
-input:hover {
+input[type="date"]:hover {
   background-color: #dcdcdc;
 }
 
@@ -445,17 +446,44 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-  /*freccia input-> date*/
-  color: #080808;
+  background-image: url('../immagini/calendarWhite.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  cursor: pointer;
   transform: rotate(180deg);
-  -webkit-transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
+  z-index: 1;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator:hover {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+  background-image: url('../immagini/calendarBlack.png');
+  transform: rotate(180deg);
+  transition: transform 0.5s;
 }
+
+input[type="date"]::-moz-calendar-picker-indicator {
+  background-image: url('../immagini/calendarWhite.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: transform 0.5s;
+}
+
+input[type="date"]::-moz-calendar-picker-indicator:hover {
+  background-image: url('../immagini/calendarBlack.png');
+  transform: rotate(180deg);
+  transition: transform 0.5s;
+}
+
 
 #firstname,
 input[type="number"] {
