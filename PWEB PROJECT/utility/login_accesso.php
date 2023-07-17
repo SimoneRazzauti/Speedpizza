@@ -18,14 +18,14 @@ if (isset($_POST['username'])){
   
    $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
 
-   $result = mysqli_query($con,$query) or die(mysql_error());
+   $result = mysqli_query($con,$query) or die(mysqli_error($con));
    
    $rows = mysqli_num_rows($result);
  
    if ($rows == 1) {
 
       //CREO VARIABILE DI SESSIONE
-      $_SESSION['username'] = $username;
+      $_SESSION["username"] = $username;
 
       // CREO UN COOKIE DI UNA SETTIMANA
       $expiry_time = time() + 3600*24*7; 

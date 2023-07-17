@@ -25,7 +25,7 @@
     $idordine = generateRandomNumber($con);
     unset($_SESSION["totale"]); /* Unset del totale */
 
-    $query = "SELECT * FROM ordini_log WHERE utente='".$_SESSION['username']."'";
+    $query = "SELECT * FROM ordini_log WHERE utente='".$_SESSION["username"]."'";
     $result=mysqli_query($con,$query);
     $resultCount=mysqli_num_rows($result);
 
@@ -94,7 +94,7 @@
 
     /* SVUOTO LOG ORDINI */
 
-    mysqli_query($con,"DELETE FROM ordini_log WHERE utente='".$_SESSION['username']."'");
+    mysqli_query($con,"DELETE FROM ordini_log WHERE utente='".$_SESSION["username"]."'");
 
 
     /* Reindirizzamento a success.php */

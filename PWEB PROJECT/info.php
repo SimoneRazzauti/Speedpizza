@@ -3,7 +3,7 @@
 	require('inc/db.php');
 	include('utility/function.php'); # funzioni di utilità
 
-	if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
+	if(!isset($_SESSION["username"]) && !isset($_COOKIE["NOME"])){
 	  header('location: 404.php');
     exit;
 	}
@@ -12,7 +12,7 @@
     $_SESSION["username"] = $_COOKIE["NOME"];
   }
 
-	$query = "SELECT * FROM users WHERE username='".$_SESSION['username']."'";
+	$query = "SELECT * FROM users WHERE username='".$_SESSION["username"]."'";
    	$result=mysqli_query($con,$query);
    	$row = mysqli_fetch_assoc($result);
    	$nome = $row['nome'];
@@ -64,7 +64,7 @@
     <form class="center-form" method="post">
       <div class="form-row">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" value="<?php echo $_SESSION['username'] ?>" readonly>
+        <input type="text" id="username" name="username" value="<?php echo $_SESSION["username"] ?>" readonly>
       </div>
       <div class="form-row">
         <label for="name">Nome:</label>

@@ -2,7 +2,7 @@
 session_start();
 $target = $_GET['target'];
 
-if(isset($_SESSION['username']) || isset($_COOKIE["NOME"])){
+if(isset($_SESSION["username"]) || isset($_COOKIE["NOME"])){
   header('location: 404.php');
   exit;
 }

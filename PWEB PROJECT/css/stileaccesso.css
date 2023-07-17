@@ -1,73 +1,72 @@
 body {
-    font-family: sans-serif;
-  }
-  
-  #center_div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-  }
-  
-  .imgdiv {
-    text-align: center;
-  }
-  
-  .avatar {
-    width: 20%;
-  }
-  
-  .intestation-text {
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 18px;
-    color: #ff0000;
-    margin: 20px 0;
-  }
-  
-  .intestation strong {
-    font-size: 20px;
-  }
-  
-  .intestation a {
-    color: #ff0000;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container label {
-    font-size: 20px;
-    color: #000000;
-  }
-  
-  .container input {
-    box-sizing: border-box;
-    width: 100%;
-    margin: 8px 0;
-    padding: 10px;
-  }
-  
-  .button {
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 10px;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .error_login {
-    background-color: #ff0000;
-    color: #000000;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
+  font-family: sans-serif;
+}
+
+#center_div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.imgdiv {
+  text-align: center;
+}
+
+.avatar {
+  width: 20%;
+}
+
+.intestation-text {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #ff0000;
+  margin: 20px 0;
+}
+
+.intestation strong {
+  font-size: 20px;
+}
+
+.intestation a {
+  color: #ff0000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container label {
+  font-size: 20px;
+  color: #000000;
+}
+
+.container input {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+}
+
+.button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.error_login {
+  background-color: #ff0000;
+  color: #000000;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}

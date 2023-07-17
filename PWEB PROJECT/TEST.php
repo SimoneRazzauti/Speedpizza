@@ -2,7 +2,7 @@
 	session_start();
 	require('inc/db.php');
 
-	if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
+	if(!isset($_SESSION["username"]) && !isset($_COOKIE["NOME"])){
 		header('location: 404.php');
 	  exit;
 	  }
@@ -267,40 +267,40 @@
 </aside>
 <aside id="details"> 
 	<h3> Le tue informazioni </h3>
-	<p><strong> Username: </strong><?php echo $_SESSION['username']; ?> <br>
+	<p><strong> Username: </strong><?php echo $_SESSION["username"]; ?> <br>
 	<strong>Email: </strong>
 	<?php 
-	$query = mysqli_query($con,"SELECT email FROM users WHERE username ='{$_SESSION['username']}'");
+	$query = mysqli_query($con,"SELECT email FROM users WHERE username ='{$_SESSION["username"]}'");
 	$result = mysqli_fetch_assoc($query);
 	echo $result["email"];
 	?> <br>
 	<strong>Nome: </strong>
 	<?php 
-	$query = mysqli_query($con,"SELECT nome FROM users WHERE username ='{$_SESSION['username']}'");
+	$query = mysqli_query($con,"SELECT nome FROM users WHERE username ='{$_SESSION["username"]}'");
 	$result = mysqli_fetch_assoc($query);
 	echo $result["nome"];
 	?> 
 	&emsp;&emsp;<strong>Cognome: </strong>
 	<?php 
-	$query = mysqli_query($con,"SELECT cognome FROM users WHERE username ='{$_SESSION['username']}'");
+	$query = mysqli_query($con,"SELECT cognome FROM users WHERE username ='{$_SESSION["username"]}'");
 	$result = mysqli_fetch_assoc($query);
 	echo $result["cognome"];
 	?> <br>
 	<strong>Citta: </strong>
 	<?php 
-	$query = mysqli_query($con,"SELECT citta FROM users WHERE username ='{$_SESSION['username']}'");
+	$query = mysqli_query($con,"SELECT citta FROM users WHERE username ='{$_SESSION["username"]}'");
 	$result = mysqli_fetch_assoc($query);
 	echo $result["citta"];
 	?> <br>
 	<strong>Indirizzo: </strong>
 	<?php 
-	$query = mysqli_query($con,"SELECT indirizzo FROM users WHERE username ='{$_SESSION['username']}'");
+	$query = mysqli_query($con,"SELECT indirizzo FROM users WHERE username ='{$_SESSION["username"]}'");
 	$result = mysqli_fetch_assoc($query);
 	echo $result["indirizzo"];
 	?> 
 	&emsp;&emsp;<strong>CAP: </strong>
 	<?php 
-	$query = mysqli_query($con,"SELECT cap FROM users WHERE username ='{$_SESSION['username']}'");
+	$query = mysqli_query($con,"SELECT cap FROM users WHERE username ='{$_SESSION["username"]}'");
 	$result = mysqli_fetch_assoc($query);
 	echo $result["cap"];
 	?> 

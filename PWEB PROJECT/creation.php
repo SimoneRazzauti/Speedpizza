@@ -2,7 +2,7 @@
 session_start();
 include('utility/function.php'); # funzioni di utilità
 
-if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
+if(!isset($_SESSION["username"]) && !isset($_COOKIE["NOME"])){
     header('location: accesso.php?target=Creation');
     exit;
 }

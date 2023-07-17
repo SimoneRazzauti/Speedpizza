@@ -1,6 +1,6 @@
 <?php
  	$daily_date = date("Y-m-d"); // Data corrente
-	if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
+	if(!isset($_SESSION["username"]) && !isset($_COOKIE["NOME"])){
 		header('location: 404.php');
 		exit;
 	}

@@ -3,7 +3,7 @@
 	session_start();
     require('../inc/db.php');
 
-	$query = "SELECT * FROM ordini_log WHERE utente ='".$_SESSION['username']."'";
+	$query = "SELECT * FROM ordini_log WHERE utente ='".$_SESSION["username"]."'";
 	$result=mysqli_query($con,$query);
     $resultCount=mysqli_num_rows($result);
 

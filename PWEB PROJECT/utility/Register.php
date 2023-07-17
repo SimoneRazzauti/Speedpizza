@@ -205,7 +205,7 @@ session_start();
 
 
     // CREO la variabile di sessione username
-    $_SESSION['username'] = $username; 
+    $_SESSION["username"] = $username; 
     
     // CREO IL COOKIE DI UNA SETTIMANA
     $expiry_time = time() + 3600*24*7; 

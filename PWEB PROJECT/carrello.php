@@ -3,7 +3,7 @@ session_start();
 require('inc/db.php');
 include('utility/function.php'); # funzioni di utilità
 
-if(!isset($_SESSION['username']) && !isset($_COOKIE['NOME'])){
+if(!isset($_SESSION["username"]) && !isset($_COOKIE["NOME"])){
 	header('location: accesso.php?target=Carrello');
 	exit;
 }
@@ -38,7 +38,7 @@ if(isset($_COOKIE["NOME"])){
 
 		$totale_finale = 0; /* Contatore prezzo totale carrello */
 
-		$query = "SELECT * FROM ordini_log WHERE utente='".$_SESSION['username']."'";
+		$query = "SELECT * FROM ordini_log WHERE utente='".$_SESSION["username"]."'";
    		$result=mysqli_query($con,$query);
     	$resultCount=mysqli_num_rows($result);
 
