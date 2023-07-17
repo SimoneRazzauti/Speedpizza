@@ -6,31 +6,22 @@ require('../inc/db.php');
 if (isset($_POST['username'])){
   
   // rimuovi gli spazzi
-  
   $username = stripslashes($_REQUEST['username']);
   
   
   // rimuovi tutti i caratteri speciali
-  
-  
-  $username = mysqli_real_escape_string($con,$username);
-  
-  $password = stripslashes($_REQUEST['password']);
-  
+  $username = mysqli_real_escape_string($con,$username);  
+  $password = stripslashes($_REQUEST['password']);  
   $password = mysqli_real_escape_string($con,$password);
   
   
   
-  //CHECK NEL DB
-  
-  $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
-  
-  $result = mysqli_query($con,$query) or die(mysqli_error($con));
-  
+  //CHECK NEL DB  
+  $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";  
+  $result = mysqli_query($con,$query) or die(mysqli_error($con));  
   $rows = mysqli_num_rows($result);
   
-  // SE C'E' CORRISPONDENZA ACCEDO
-  
+  // SE C'E' CORRISPONDENZA ACCEDO  
   if($rows==1){
 
       //CREO VARIABILE DI SESSIONE

@@ -4,6 +4,7 @@
 
     function generateRandomNumber($con){ // genero un codice ordine unico
      $randomString = uniqid(rand());
+     
     //Devo verificare che il codice non sia gia presente (affinche sia unico)
       $domanda = "SELECT * FROM ordini_def WHERE codordine='".$randomString."'";
       $risultato=mysqli_query($con,$domanda);
@@ -68,7 +69,6 @@
          mysqli_query($con,"DELETE FROM pizzacustom_log WHERE idpizza='".$rows_ordini[$i]['pizza']."'");
 
         /* INSERIMENTO DALLA TABELLA LOG DELLE BEVANDE A QUELLA DEFINITIVA */
-
         $query4 = "SELECT * FROM bevande_log WHERE pizza='".$rows_ordini[$i]['pizza']."'";
         $result4=mysqli_query($con,$query4);
         $resultCount4=mysqli_num_rows($result4);
@@ -93,12 +93,10 @@
     }
 
     /* SVUOTO LOG ORDINI */
-
     mysqli_query($con,"DELETE FROM ordini_log WHERE utente='".$_SESSION["username"]."'");
 
 
     /* Reindirizzamento a success.php */
-
     header('location: ../successo.php ');
     exit;
 

@@ -8,13 +8,9 @@ if (isset($_POST['username'])){
 
 
   $username = stripslashes($_REQUEST['username']);
-
   $username = mysqli_real_escape_string($con,$username);
-
   $password = stripslashes($_REQUEST['password']);
-
   $password = mysqli_real_escape_string($con,$password);
-
   
    $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
 

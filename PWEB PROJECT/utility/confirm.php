@@ -26,8 +26,6 @@
 }
 	$idpizza=generateRandomNumber($con); // Genero un nuovo idPizza e inserisco un record nella tabella ordini
 
-	
-
 	// Adesso inserisco nella tabella pizzacustom con l'id precedentemente creato
 	mysqli_query($con,"INSERT INTO pizzacustom_log (idpizza, impasto, salsa, formaggio) VALUES ('".$idpizza."','".$_SESSION["impasto"]."','".$_SESSION["tomato"]."','".$_SESSION["cheese"]."')");
 	unset($_SESSION['impasto']);
@@ -244,10 +242,6 @@
 	/* Aggiorno */
 
 	mysqli_query($con,"UPDATE ordini_log SET totale='".$sum."' WHERE pizza='".$idpizza."'");
-
-
-
-
 	header("location: ../carrello.php"); //reindirizzo al carrello
 
 
