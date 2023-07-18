@@ -172,16 +172,3 @@ function closemodal2(){
 }
 /* ----------------------------------- */
   
-/*  per le checkbox (validation)
-var checkedValue = null; 
-var inputElements = document.getElementsByName('q6');
-for(var i=0; inputElements[i]; ++i){
-  if(inputElements[i].checked){
-    checkedValue = inputElements[i].value;
-    break;
-  }
-}
-
-per i radio button (validation)
- var q5 = document.forms["quizForm"]["q5"].value;
-*/
