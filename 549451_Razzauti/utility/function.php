@@ -74,7 +74,7 @@ function footer_php() {
         </div>
       </div>
       <div class="div-center">
-        <img src="immagini/arrow-up.png" alt="freccia" onclick="scrollup()" class="arrow-icon">
+        <img src="immagini/arrow-up.png" alt="freccia" onclick="scrollup(); closeMenu();" class="arrow-icon">
       </div>
       <div class="div-right">
         <div id="map-container">

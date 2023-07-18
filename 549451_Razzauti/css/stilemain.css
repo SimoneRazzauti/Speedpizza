@@ -70,6 +70,7 @@ body {
 }
 
 .tutorial div img {
+  position: absolute;
   width: 100%;
 }
 
